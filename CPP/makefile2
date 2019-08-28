@@ -1,0 +1,6 @@
+start:
+	@echo "Hello world!"
+	@ls -l vector.cpp
+all:
+	@echo "What's your problem?"
+
