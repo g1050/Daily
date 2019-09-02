@@ -2,6 +2,7 @@
 #include <cmath>
 #include <algorithm>
 using namespace std;
+
 class Rational
 {
 public:
@@ -25,7 +26,7 @@ private:
 
 ostream& operator<<(ostream& os,Rational f)
 {
-    os << f.numerator << " / " < f.denomiator;
+    os << f.numerator << " / " << f.denomiator;
     return os;
 }
 
@@ -101,8 +102,8 @@ int main()
 {
     Rational x(1,4);
     Rational y(1,2);
-    Rational f1 = x / y;
-    f1.print();
+    /* Rational f1 = x + y; */
+    cout << x+y;
     return 0;
 }
 

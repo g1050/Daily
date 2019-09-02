@@ -1,7 +1,11 @@
 #include <iostream>
+#include<ostream>
+
+
 using namespace std;
 class Complex
 {
+    friend ostream& operator<<(ostream &os,Complex d);
 public:
     Complex();//构造器
     Complex(double r ,double l);//重载构造器
@@ -34,11 +38,23 @@ Complex Complex::operator+(Complex &d)
     return c;
 }
 
+ostream& operator<<(ostream &os,Complex d)
+{
+    os << "result = ";
+    d.print();
+
+    /* printf("\n%p\n",&os); */
+    return os;
+
+}
+
 void Complex::print()
 {
     cout << "(" << real << "," << imag << "i)\n";
     return  ;
 }
+
+
 
 int main()
 {
@@ -50,9 +66,14 @@ int main()
     c2.print();
 
     c3 = c1 + c2;
-    cout << "c3 = ";
-    c3.print();
-
+ //   cout << "c3 = ";
+   // c3.print();
+   //(cout << c3) << "asd ";
+ //   printf("%p",&cout);
+   /* cout << 3+5; */
+    cout << c1+c2;
     return 0;
 }
+
+
 
