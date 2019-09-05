@@ -34,6 +34,15 @@ private:
     char *p;
 };
 
+
+//构造函数初始化列表
+class Test2
+{
+public:
+    Test2(){
+        cout << "Test2构造函数" << endl;
+    }
+};
 void Test::printp()
 {
     cout << p << endl;
