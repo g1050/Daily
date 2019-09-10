@@ -35,7 +35,7 @@ private:
 Test f()
 {
     cout << "hell\n";
-    Test t(1,2);
+    static Test t(1,2);
     cout << "g\n";
     return t;
 }
