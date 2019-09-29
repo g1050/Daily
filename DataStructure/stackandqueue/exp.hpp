@@ -28,6 +28,7 @@ int Exp::getValue()
     int size = v.size();
     stack <int> st;
     for(int i = 0;i<size;i++){
+        
         if(isalnum(v[i])){
             int res = v[i]-48;
             while(i+1 < size && isalnum(v[i+1])){//处理两位数及两位数以上 后面必接一个#
@@ -54,7 +55,9 @@ int Exp::getValue()
                 int res = top2 - top1;
                 st.push(res);
                 /* cout << res << endl; */
-            }else if(v[i] == '*'){
+            }
+            
+            else if(v[i] == '*'){
                 int top1 = st.top();
                 st.pop();
                 int top2 = st.top();
@@ -119,6 +122,16 @@ void Exp::toPostfix()
    string tmp;
    stack <char> st;
    int size = s.size();
+
+   //预处理负号
+   for(int i = 0;i<size;i++){
+       if(s[i] == '-'){
+           if(i == 0 || (i - 1 >= 0 && s[i-1] == '(')) s.insert(i,1,'0');
+       }
+   }
+
+   /* cout << "s = " << s << endl; */
+   size = s.size();    
    for(int i = 0;i < size ;i++){
     
        if(isalnum(s[i])){
