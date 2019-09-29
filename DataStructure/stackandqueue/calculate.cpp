@@ -8,6 +8,7 @@ int main()
     if(exp.ifLegal())  cout << "Legal!\n";
     else cout << "Unlegal!\n";
     exp.toPostfix();
+    cout << "res = " << exp.getValue();
     return 0;
 }
 
