@@ -1,32 +1,6 @@
-#ifndef _EXP_H_
-#define _EXP_H_
+#include "cal.h"
 
-#include <string>
-#include <vector>
-#include <ctype.h>
-#include <algorithm>
-#include <cmath>
-#include "stack.hpp"
-
-
-class Exp
-{
-public:
-    Exp(string s) {
-        this->s = s;
-    }
-    ~Exp() {}
-    bool ifLegal();
-    void toPostfix();
-    int getPriority(char c);
-    double getValue();
-private:
-    string s;
-    vector <char> v;
-};
-
-
-double Exp::getValue()
+double cal::getValue()
 {
     int size = v.size();
     stack <double> st;
@@ -90,13 +64,13 @@ double Exp::getValue()
     }
     return st.top();
 }
-int Exp::getPriority(char c)
+int cal::getPriority(char c)
 {
     if(c == '(')    return 1;
     if(c == '+' || c == '-') return 2;
     else  return 3;
 }
-bool Exp::ifLegal()
+bool cal::ifLegal()
 {
     int cnt = 0;
     int size = s.size();
@@ -129,7 +103,7 @@ bool Exp::ifLegal()
 
 }
 
-void Exp::toPostfix()
+void cal::toPostfix()
 {
    string tmp;
    stack <char> st;
@@ -185,6 +159,3 @@ void Exp::toPostfix()
    cout << "\n";
    return ;
 }
-
-#endif
-
