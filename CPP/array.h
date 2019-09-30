@@ -9,6 +9,7 @@ public:
     void SetData(int  index,int value);
     int GetData(int index);
     int size();
+    int& operator[](int i);
 private:
     int length;
     int *p;

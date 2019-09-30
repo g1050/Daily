@@ -30,3 +30,7 @@ void Array::SetData(int index,int value){
     p[index] = value;
     return ;
 }
+
+int& Array::operator[](int i){
+        return p[i];
+}
