@@ -1,6 +1,5 @@
 package second;
-import zdsd.Circle;
-import  zdsd.equal;
+import java.lang.Float;
 public class s1 {
     public static void main(String []args){
         //System.out.println("Hello Circle");
@@ -12,8 +11,8 @@ public class s1 {
         System.out.printf("Long  range:%d - %d \n",Long.MIN_VALUE, Long.MAX_VALUE);
 
         //float double 精度范围
-        System.out.printf("Float range:%d - %d \n",Float.MIN_VALUE, Float.MAX_VALUE);
-        System.out.printf("Double range:%d - %d \n",Double.MIN_VALUE, Double.MAX_VALUE);
+        System.out.printf("Float range:%f - %f \n",Float.MIN_VALUE, Float.MAX_VALUE);
+        System.out.printf("Double range:%f - %f \n",Double.MIN_VALUE, Double.MAX_VALUE);
 
         //char 表示Unicode范围
         System.out.printf("Character range:%h - %h \n",Character.MIN_VALUE, Character.MAX_VALUE);
