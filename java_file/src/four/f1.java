@@ -28,4 +28,9 @@ class Clothes{
         this.size = size;
         this.color = color;
     }
+    Clothes(){}
+    void set(String colot,char size){
+        this.color = colot;
+        this.size = size;
+    }
 }
