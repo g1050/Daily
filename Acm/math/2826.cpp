@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string>
+#include <cstdio>
 using namespace std;
 const int MAXN = 1e9+7;
 int main()
 {   
-    char a;
     int n;
     cin >> n;
-    cin >> a; 
     string s;
+    getchar();
+    getchar();
     getline(cin , s);
     /* cout << s << endl; */
     int ans = 0;
