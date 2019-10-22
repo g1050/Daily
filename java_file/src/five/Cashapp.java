@@ -45,6 +45,9 @@ public class Cashapp {
                 new Cashapp("A003",1000,1)};
 
         for(Cashapp card:cards){
+            card.store(100);
+            System.out.printf("number = %s, balance = %d , bonus = %d\n",card.number,card.balance,card.bonus);
+            card.charge(200);
             System.out.printf("number = %s, balance = %d , bonus = %d\n",card.number,card.balance,card.bonus);
         }
     }
