@@ -6,9 +6,9 @@ struct node
 {
     node<T> *lchild;
     node<T> *rchild;
-    bool ltag = true;
-    bool rtag = true;
-    bool mtag = true;
+    bool ltag ;
+    bool rtag ;
+    bool mtag ;
     T data;
 };
 
@@ -81,11 +81,22 @@ void Tree<T>::preOrderTraverse2()
 template <typename  T>
 void Tree<T>::inOrderTraverse2()
 {
-    if(t != NULL)
-    s.push(*t);
-    while(!s.empty()){
-        node<T> tmp = s.top();
+    stack <node<T> *> s;
+    node <T> *p;
+    p = t;
+    if(p == NULL)   return;
+    while(!s.empty() || p){
+        if(p){
+            s.push(p);
+            p = p->lchild;
+        }else{
+            p = s.top();
+            s.pop();
+            cout << p->data ;
+            p = p->rchild;
+        }
     }
+    cout << "\n";
     return ;
 }
     template <typename T>
@@ -139,7 +150,9 @@ void Tree<T>::createTree(node <T> *&p)
         /* std::cout << "p = " << p << std::endl; */
         p->data = tmp;
         /* std::cout << p->data << std::endl; */
-
+        p->ltag = true;
+        p->rtag = true;
+        p->mtag = true;
         this->createTree(p->lchild);
 
         this->createTree(p->rchild);
