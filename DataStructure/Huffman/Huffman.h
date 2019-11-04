@@ -4,7 +4,7 @@
 #include <vector>
 #include <queue>
 #include <string>
-#include "file.h"
+#include "File.h"
 using namespace std;
 
 /* 定义霍夫曼树节点 */
@@ -36,6 +36,7 @@ public:
     ~HuffmanTree() {}
     void buildTree(const map<char,int> &mp);
     void getStr(HuffmanNode *p,string &str);
+    vector<string> getVector();
 private:
     vector<string> v = vector<string>(260);
     string str;

@@ -1,6 +1,10 @@
 #include "Huffman.h"
 typedef pair<char,int> Element;
 
+/* 返回得到的新的编码表 */
+vector<string> HuffmanTree::getVector(){
+    return v;
+}
 /* 根据霍夫曼树获得相应字符的编码 */
 void HuffmanTree::getStr(HuffmanNode *p,string &str)
 {
