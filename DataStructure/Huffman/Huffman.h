@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 #include <string>
+#include "file.h"
 using namespace std;
 
 /* 定义霍夫曼树节点 */

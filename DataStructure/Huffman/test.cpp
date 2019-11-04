@@ -1,21 +1,27 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 using namespace std;
+
 class Test
 {
-    private:
-        vector<string> v3(260);
+public:
+    ifstream in;
+    ofstream out;
 };
 int main()
 {
-    vector<string> v2(260);
-    vector <int> v(260);
-    v['a'] = 100;
-    cout << v['a'] << endl;
-    cout << v2[0] << endl;
+    char ch;
+    Test t;
+    t.in.open("Hello.txt",ios::in | ios::binary);
+    if(!t.in.is_open()){
+        cout << "error" << endl;
+    }
+    while(t.in.peek() != EOF){
+        ch = t.in.get();
+        cout << ch ;
+    }
     return 0;
-
-
 }
 

@@ -4,16 +4,19 @@
 using namespace std;
 int main()
 {
-    map<char,int> mp = {
-        {'a',50},
-        {'b',20},
-        {'c',30},
-        {'d',40},
-        {'e',10}
-    };
+    string s;
+    map<char,int> mp ;
 
     HuffmanTree huffmantree;
-    huffmantree.buildTree(mp);
+    File file;
+    cin >> s;
+    mp = file.getMap(s);
+
+    /* for(auto it = mp.begin() ; it != mp.end() ;it++){ */
+    /*     cout << (int)it->first << " " << it->second << endl; */
+    /* } */
+
+    /* huffmantree.buildTree(file.getMap(s)); */
 
     return 0;
 }
