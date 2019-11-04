@@ -2,10 +2,16 @@ package Six;
 
 import java.util.logging.Level;
 
-public class Role {
+public abstract class Role {
     private String name;
     private int Level;
     private int blood;
+
+    public void fight(){}
+
+    public void showBlood(){}
+
+    public abstract void showLevel();
 
     public void setBlood(int blood)
     {

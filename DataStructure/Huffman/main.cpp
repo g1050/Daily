@@ -13,7 +13,8 @@ int main()
     };
 
     HuffmanTree huffmantree;
-    huffmantree.input(mp);
+    huffmantree.buildTree(mp);
+
     return 0;
 }
 
