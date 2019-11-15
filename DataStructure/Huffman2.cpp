@@ -22,6 +22,9 @@ struct HuffmanNode{
 struct cmp{
     bool operator()(HuffmanNode *p1,HuffmanNode *p2)
     {
+        if(p1->weight == p2->weight){
+            return p1->key >= p2->key;
+        }  
         return p1->weight >  p2->weight;
     }
 };
@@ -191,9 +194,9 @@ int main()
 
     printf("%.2lf\n",huffmanTree.ave);
 
-    for(auto it = mp.begin();it != mp.end();it++){
-        cout << it->first << " " << it->second << " " << huffmanTree.v[it->first] << endl;;
-    }
+    /* for(auto it = mp.begin();it != mp.end();it++){ */
+    /*     cout << it->first << " " << it->second << " " << huffmanTree.v[it->first] << endl;; */
+    /* } */
 
 
     return 0;

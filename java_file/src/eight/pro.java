@@ -1,39 +1,23 @@
 package eight;
 
-class aa{
-    static int g(int i){
-        static int b  = 0;
-    }
+
+class aa
+{
 
     aa(){
-        a = 6;
+       System.out.print("123");
     }
-    public void f(){
+    aa(int a){
 
-        System.out.println("Hello");
-    }
-
-     public static int num = 5;
-
-    protected int a = 5;
-}
-
-class bb extends aa{
-    @Override
-    static int g(int i ){
-        System.out.print("Hello");
     }
 }
-
+class bb extends aa {
+    bb(){
+        System.out.print("234");
+    }
+}
 public class pro {
     public static void main(String []args){
-        aa tmp = new aa();
-        aa tmp2 = new aa();
-        tmp.num = 10;
-
-        tmp2.num = 20;
-
-
-        System.out.print(tmp.num);
+        bb b  = new bb();
     }
 }
