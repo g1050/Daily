@@ -42,7 +42,7 @@ void HuffmanTree::getStr(HuffmanNode *p,string &str)
 }
 
 /* 根据传入的map建立一颗霍夫曼树 */
-void HuffmanTree::buildTree(const map<char,int> &mp)
+void HuffmanTree::buildTree(const map<char,unsigned> &mp,int mode)
 {
     priority_queue<HuffmanNode *,vector<HuffmanNode *>,cmp> q;
     for(auto it = mp.begin(); it != mp.end();it++){
@@ -67,7 +67,7 @@ void HuffmanTree::buildTree(const map<char,int> &mp)
         q.push(p);
         //最后p中保留的是根节点
     }
-
-    getStr(p,str); 
+    if(mode == 0)
+        getStr(p,str); 
     return ;
 }
