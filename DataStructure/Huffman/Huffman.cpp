@@ -3,7 +3,22 @@ typedef pair<char,int> Element;
 
 /* 返回得到的新的编码表 */
 vector<string> HuffmanTree::getVector(){
+    int cnt = 0;
+    int vsize = 0;
+
+    /* for(int i = 0;i<(int)v.size();i++){ */
+    /*     int size = v[i].size(); */
+    /*     if(size > 0){ */
+    /*         vsize++; */
+    /*         cnt += v[i].size(); */
+    /*     } */
+    /* } */
+    /* cout << cnt << endl; */
+    /* cout << vsize << endl; */
+    /* cout << "平均码长:" << cnt*1.0/vsize << endl; */
+
     return v;
+
 }
 /* 根据霍夫曼树获得相应字符的编码 */
 void HuffmanTree::getStr(HuffmanNode *p,string &str)
@@ -16,7 +31,7 @@ void HuffmanTree::getStr(HuffmanNode *p,string &str)
 
     str.push_back('0');
     getStr(p->lchild,str);
-    
+
     str.pop_back();
     str.push_back('1');
     getStr(p->rchild,str); 
@@ -31,7 +46,7 @@ void HuffmanTree::buildTree(const map<char,int> &mp)
 {
     priority_queue<HuffmanNode *,vector<HuffmanNode *>,cmp> q;
     for(auto it = mp.begin(); it != mp.end();it++){
-        //把set集合中的元素转化成一个个节点存入优先队列当中去
+        //把map集合中的元素转化成一个个节点存入优先队列当中去
         HuffmanNode *p = new HuffmanNode(it->first,it->second);
         q.push(p);
     }

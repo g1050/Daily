@@ -9,9 +9,9 @@ OBJS=$(SRCS:.cpp=.o)
 EXEC=zip
 
 start:$(OBJS)
-	@$(CC) -o $(EXEC) $(SRCS)
+	@$(CC) -o $(EXEC) $(SRCS) -g
 	@echo "----------OK"
 .cpp.o:
-	@$(CC) -o $@ -c $<
+	@$(CC) -o $@ -c $< -g
 clean:
 	@rm -rf $(OBJS) $(EXEC)
