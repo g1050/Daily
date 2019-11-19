@@ -33,10 +33,8 @@ void File::decoding(string src,string des)
     in.read((char*)&size,sizeof(long long));
     in.read((char*)&lack0,sizeof(int));
 
-    cout << "size = "  << size << endl;
-    cout << "lack0 = " << lack0 << endl;
-    char a;
-    cin >> a;
+    /* cout << "size = "  << size << endl; */
+    /* cout << "lack0 = " << lack0 << endl; */
     in.seekg(ios::beg);
     while(in.peek() != EOF){
 
@@ -51,22 +49,18 @@ void File::decoding(string src,string des)
         }
         else if(flag == 1){
             if(!flag2){
-                cout << "create Tree!" << endl;
+                /* cout << "create Tree!" << endl; */
                 buildTree(mp,1);
                 t = p;
-                for(auto it = mp.begin();it != mp.end();it++)
-                {
-                    cout << it->first << " " << it->second << endl;
-                }
                 flag2 = 1;
             }else{
                 in.read((char*)&num,4);
-                cout << "num = "<<num << endl;
+                /* cout << "num = "<<num << endl; */
                 /* 先将整数转换为01序列 */
                 str2 =getBin(num);                
                 /* 根据建立的霍夫曼树解析并且写入文件 */
                 if(size == in.tellg()){
-                    cout << "break num = " << num << endl;
+                    /* cout << "break num = " << num << endl; */
                     break;
                 } 
                 for(int i = 0;i<(int)str2.size();i++){
@@ -98,7 +92,7 @@ void File::decoding(string src,string des)
 
         if(!t->lchild && !t->rchild){
             ch = t->key;
-            cout << "ch =======" << ch << endl;
+            /* cout << "ch =======" << ch << endl; */
             out.write(&ch,sizeof(ch));
             t = p;
         }
@@ -106,7 +100,7 @@ void File::decoding(string src,string des)
 
     if(lack0 != 0){
         in.read((char*)&num,4);
-        cout << "num = " << num << endl;
+        /* cout << "num = " << num << endl; */
         str2 = getBin(num);
         for(int i = 0;i<(int)str2.size()-lack0;i++){
             if(str2[i] == '0'){
@@ -201,7 +195,7 @@ void File::encoded(string src,string des)
             w = strToInt(tmp);
             /* out << w; *///这样是以字符串的形式写入的
             out.write((char*)(&w),sizeof(w));
-            cout << "w = " <<  w << endl;
+            /* cout << "w = " <<  w << endl; */
             tmp.clear();
             num = 0;
         }
@@ -219,11 +213,11 @@ void File::encoded(string src,string des)
         w = strToInt(tmp);
         /* out << w; */
         out.write((char*)(&w),sizeof(w));
-        cout << "w = " << w << endl;
+        /* cout << "w = " << w << endl; */
     }
 
-    cout << "size = "  << size << endl;
-    cout << "lack0 = " << lack0 << endl;
+    /* cout << "size = "  << size << endl; */
+    /* cout << "lack0 = " << lack0 << endl; */
 
     out.write((char*)&size,sizeof(long long ));
     out.write((char*)&lack0,sizeof(int));

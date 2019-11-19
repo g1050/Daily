@@ -6,7 +6,7 @@ SRCS=main.cpp\
 			File.cpp
 
 OBJS=$(SRCS:.cpp=.o)
-EXEC=zip
+EXEC=xuzip
 
 start:$(OBJS)
 	@$(CC) -o $(EXEC) $(SRCS) -g

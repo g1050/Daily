@@ -2,24 +2,20 @@
 #include "File.h"
 #include <map>
 using namespace std;
-int main()
+int main(int argc,char *argv[])
 {
-    string s1,s2;
-    map<char,int> mp ;
+    if(argc != 3){
+        cout << "[usage]:xuzip source destination" << endl;;
+        return 0;
+    }
+
 
     File file;
-    cout <<  "源文件名字:" << endl;
-    cin >> s1;
-    cout << "压缩文件名字:" << endl;
-    cin >> s2;
-    file.encoded(s1,s2);  
+    /* file.encoded(argv[1],argv[2]); */  
+    /* file.getVector(); */
 
     File file2;
-    file2.decoding(s2,"111");
-    /* for(auto it = mp.begin() ; it != mp.end() ;it++){ */
-    /*     cout << (int)it->first << " " << it->second << endl; */
-    /* } */
-
+    file2.decoding(argv[1],argv[2]);
 
     return 0;
 }
