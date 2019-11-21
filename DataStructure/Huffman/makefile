@@ -1,7 +1,7 @@
 .SUFFIX:.cpp .o
 
 CC=g++
-SRCS=main.cpp\
+SRCS=main2.cpp\
 	 	Huffman.cpp\
 			File.cpp
 

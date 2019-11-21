@@ -11,11 +11,11 @@ int main(int argc,char *argv[])
 
 
     File file;
-    /* file.encoded(argv[1],argv[2]); */  
+    file.encoded(argv[1],argv[2]);  
     /* file.getVector(); */
 
-    File file2;
-    file2.decoding(argv[1],argv[2]);
+    /* File file2; */
+    /* file2.decoding(argv[1],argv[2]); */
 
     return 0;
 }
