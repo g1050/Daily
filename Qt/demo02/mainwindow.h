@@ -24,6 +24,7 @@ private:
     QPushButton btn1;
     QPushButton *btn2;
     QPushButton btn3;
+    QPushButton *btn4;
     subwindow w2;
 //    void myslot();
 };

@@ -1,14 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-11-20T15:53:51
+# Project created by QtCreator 2019-11-25T20:12:35
 #
 #-------------------------------------------------
 
 QT       += core gui
-CONFIG += C++11
+CONFIG   += C++11
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = demo02
+TARGET = demo_03
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -24,12 +24,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    subwindow.cpp \
-    mybutton.cpp
+        mainwindow.cpp
 
-HEADERS  += mainwindow.h \
-    subwindow.h \
-    mybutton.h
-
-FORMS    += mainwindow.ui
+HEADERS  += mainwindow.h

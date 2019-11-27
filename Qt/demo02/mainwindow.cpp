@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "mybutton.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -35,7 +36,23 @@ MainWindow::MainWindow(QWidget *parent) :
     //connect(&w2,&subwindow::mysignals,this,&MainWindow::dealSlot);会报错因为不知道是哪个槽函数
     connect(&w2,p2,this,&MainWindow::dealSlot);
 
+    int a = 0,b = 0;
+    btn4 = new QPushButton(this);
+    btn4->setText("btn4");
+    connect(btn4,&QPushButton::clicked,
+            [=](bool isCheck)mutable{
+                a = 1;
+                btn4->setText("b4");
+                qDebug() << "233333333" << endl;
+                qDebug() << "a = " << a << "b = " << b << endl;
+                qDebug() << isCheck << endl;
+            }
 
+            );
+
+   Mybutton *btn5 = new Mybutton(this);
+   btn5->move(200,200);
+   btn5->setText("btn5");
 }
 
 void MainWindow::hs2()
