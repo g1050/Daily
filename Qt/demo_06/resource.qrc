@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../../图片/xiyoulinux.png</file>
+    </qresource>
+</RCC>
