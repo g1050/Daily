@@ -19,6 +19,7 @@ class VNode{
 };
 
 class Graph{
+public :int ans;
 	private:
 		int n,e;
 		VNode mVexs[LEN];
@@ -100,9 +101,13 @@ class Graph{
 			}
 		}
 		void dfs(){
+            ans = 0;
 			for(int i = 0;i<n;i++){
-				if(!vis[i])
+                if(!vis[i]){
+                    ans++;
 					dfs(0);
+                }
+                    
 			}
 		}
 		
@@ -110,7 +115,7 @@ class Graph{
 			ENode *p = mVexs[index].firstEdge;
 			vis[index] = true;
 	
-			cout << mVexs[index].data;	
+			/* cout << mVexs[index].data; */	
 			
 			while(p){
 				if(!vis[p->vex]){
@@ -156,11 +161,14 @@ int main()
 	//cout << "Hello World!" << endl;
 	Graph g;
 	g.input();
+
 	g.print();
 	g.printDegree();
 	g.dfs();
+    /* cout << g.ans << endl; */
 	cout << "\n";
 	g.bfs();
     cout << "\n";
+
 	return 0;
 }
