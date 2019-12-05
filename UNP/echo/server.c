@@ -7,7 +7,7 @@ void do_something(int connfd)
     char buf[MAXLINE];
 
 again:
-    while((n = read(connfd,buf,MAXLINE)) > 0){
+    while((n = readline(connfd,buf,MAXLINE)) > 0){
         printf("%s\n",buf);
         printf("--------------------------\n");
         Writen(connfd,buf,n);
