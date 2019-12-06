@@ -50,12 +50,14 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../compress/main.cpp \
 		../compress/mainwindow.cpp \
-		../compress/File.cpp \
-		../compress/Huffman.cpp moc_mainwindow.cpp
+		../compress/Huffman.cpp \
+		../compress/Huffman.cpp \
+		../compress/File.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		File.o \
 		Huffman.o \
+		Huffman.o \
+		File.o \
 		moc_mainwindow.o
 DIST          = ../compress/compress.pro.user \
 		../../../tools/qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
@@ -229,11 +231,13 @@ DIST          = ../compress/compress.pro.user \
 		../../../tools/qt/5.8/gcc_64/mkspecs/features/yacc.prf \
 		../../../tools/qt/5.8/gcc_64/mkspecs/features/lex.prf \
 		../compress/compress.pro ../compress/mainwindow.h \
-		../compress/File.h \
-		../compress/Huffman.h ../compress/main.cpp \
+		../compress/Huffman.h \
+		../compress/Huffman.h \
+		../compress/File.h ../compress/main.cpp \
 		../compress/mainwindow.cpp \
-		../compress/File.cpp \
-		../compress/Huffman.cpp
+		../compress/Huffman.cpp \
+		../compress/Huffman.cpp \
+		../compress/File.cpp
 QMAKE_TARGET  = compress
 DESTDIR       = 
 TARGET        = compress
@@ -609,8 +613,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../tools/qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../compress/mainwindow.h ../compress/File.h ../compress/Huffman.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../compress/main.cpp ../compress/mainwindow.cpp ../compress/File.cpp ../compress/Huffman.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../compress/mainwindow.h ../compress/Huffman.h ../compress/Huffman.h ../compress/File.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../compress/main.cpp ../compress/mainwindow.cpp ../compress/Huffman.cpp ../compress/Huffman.cpp ../compress/File.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../compress/mainwindow.ui $(DISTDIR)/
 
 
@@ -779,16 +783,36 @@ moc_mainwindow.cpp: ui_mainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpen.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMenuBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmenubar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QRadioButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qradiobutton.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QStatusBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QToolBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtoolbar.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QToolButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtoolbutton.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QString \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QFileDialog \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qdir.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QDebug \
 		../compress/mainwindow.h \
 		moc_predefs.h \
 		../../../tools/qt/5.8/gcc_64/bin/moc
@@ -947,16 +971,36 @@ main.o: ../compress/main.cpp ../compress/mainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpen.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMenuBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmenubar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QRadioButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qradiobutton.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QStatusBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QToolBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtoolbar.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QToolButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtoolbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QString \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QFileDialog \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qdir.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../compress/main.cpp
 
 mainwindow.o: ../compress/mainwindow.cpp ../compress/mainwindow.h \
@@ -1093,24 +1137,46 @@ mainwindow.o: ../compress/mainwindow.cpp ../compress/mainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextformat.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpen.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMenuBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmenubar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmenu.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QPushButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QRadioButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qradiobutton.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QStatusBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QToolBar \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtoolbar.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QToolButton \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtoolbutton.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QString \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QFileDialog \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qdir.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qfileinfo.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../compress/mainwindow.cpp
+
+Huffman.o: ../compress/Huffman.cpp ../compress/Huffman.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Huffman.o ../compress/Huffman.cpp
+
+
 
 File.o: ../compress/File.cpp ../compress/File.h \
 		../compress/Huffman.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o File.o ../compress/File.cpp
-
-Huffman.o: ../compress/Huffman.cpp ../compress/Huffman.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Huffman.o ../compress/Huffman.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

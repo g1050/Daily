@@ -5,9 +5,9 @@
 #include <QString>
 #include <QFileDialog>
 #include <QDebug>
-#include "File.h"
 #include <string>
 #include <iostream>
+#include <string>
 
 class MainWindow : public QMainWindow
 {

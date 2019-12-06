@@ -147,16 +147,11 @@ void File::writeHead(string &des)
 /* 编码函数，根据vector中的新编码方式，重新编码写入文件 */
 void File::encoded(string src,string des)
 {
-
-
-    cout << "kaishi" << endl;
     getMap(src);
-    cout << "getmap" << endl;
     buildTree(mp,0);
-    cout << "buildtree" << endl;
     //将map信息写入文件头部
     writeHead(des); 
-    cout << "writehead" << endl;
+
     char ch;//存放每次读取到的一个字符数据
     string tmp = "";//存取链接到的32为字符串
     int num = 0;//记录tmp中的01个数

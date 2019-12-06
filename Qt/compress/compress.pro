@@ -25,12 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    File.cpp \
-    Huffman.cpp
+    Huffman.cpp \
+    Huffman.cpp \
+    File.cpp
 
 HEADERS  += mainwindow.h \
-    File.h \
-    Huffman.h
+    Huffman.h \
+    Huffman.h \
+    File.h
 
 FORMS    += mainwindow.ui
 

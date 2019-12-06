@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::on_toolButton_clicked()
 {
-    path_src = QFileDialog::getOpenFileName(this,"请选择要压缩的文件...","/home/gxk/","source(*.cpp *.h .txt *.txt);Text(*.txt);zip(*.xzip)");
+    path_src = QFileDialog::getOpenFileName(this,"请选择要压缩的文件...","/home/gxk/","source(*.cpp *.h .txt *.txt *.txt *.xzip)");
     qDebug() << "path_src"<<  path_src << endl;
     ui.ln_src->setText(path_src);
 }
@@ -44,21 +44,22 @@ void MainWindow::on_toolButton_2_clicked()
 
 void MainWindow::on_btn_in_clicked()
 {
-    File file;
-    string s1 = path_src.toStdString();
-    string s2 = path_des.toStdString();
-    cout << s1 << endl;
-    cout << s2 << endl;
-    file.encoded(s1,s2);
+    std::string s1 = path_src.toStdString();
+    std::string s2 = path_des.toStdString();
+    std::cout << s1 << std::endl;
+    std::cout << s2 << std::endl;
 
 }
 
 void MainWindow::on_btn_de_clicked()
 {
-    File file;
-    string s1 = path_src.toStdString();
-    string s2 = path_des.toStdString();
-    cout << s1 << endl;
-    cout << s2 << endl;
-    file.decoding(s1,s2);
+    //File file;
+    std::string s1 = path_src.toStdString();
+    std::string s2 = path_des.toStdString();
+    std::cout << s1 << std::endl;
+    std::cout << s2 << std::endl;
+    //file.decoding(s1,s2);
 }
+
+
+

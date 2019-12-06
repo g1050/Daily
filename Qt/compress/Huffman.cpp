@@ -45,7 +45,6 @@ void HuffmanTree::getStr(HuffmanNode *p,string &str)
 /* 根据传入的map建立一颗霍夫曼树 */
 void HuffmanTree::buildTree(const map<char,unsigned> &mp,int mode)
 {
-    cout << "jinru" << endl;
     priority_queue<HuffmanNode *,vector<HuffmanNode *>,cmp> q;
     for(auto it = mp.begin(); it != mp.end();it++){
         //把map集合中的元素转化成一个个节点存入优先队列当中去

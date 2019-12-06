@@ -2,8 +2,6 @@
 #include <fstream>
 #include "Huffman.h"
 #include <cmath>
-#include <QProgressBar>
-#include "mainwindow.h"
 using namespace std;
 
 struct mapinfo
@@ -14,7 +12,6 @@ struct mapinfo
 
 class File :public HuffmanTree {
 private:
-    QProgressBar *progressbar;
     map<char,unsigned> mp;
     unsigned strToInt(const string &tmp){
         unsigned num = 0; 
@@ -26,10 +23,7 @@ private:
     }
 
 public:
-    File() {
-
-
-    }
+    File() {}
     ~File() {}
     map<char,unsigned> getMap(const string &s); 
     void encoded(string src,string des);//src是源文件，des是压缩后的文件
