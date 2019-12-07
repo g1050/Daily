@@ -3,7 +3,8 @@
 
 #include "ui_mainwindow.h"
 #include "File.h"
-#include <Q
+#include <QProgressBar>
+
 class MainWindow : public QMainWindow,public File
 {
     Q_OBJECT
