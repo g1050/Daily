@@ -29,7 +29,7 @@ void HuffmanTree::getStr(HuffmanNode *p,string &str)
     if(!p->lchild && !p->rchild){
         int pos = (int)p->key+128;
         //cout << cnt++ << endl;
-        cout << "p->key = " << pos << endl;
+        //cout << "p->key = " << pos << endl;
         //cout << "str = " << str << endl;
         v[pos] = str;
         /* cout << p->key << " " << v[p->key] << endl; */

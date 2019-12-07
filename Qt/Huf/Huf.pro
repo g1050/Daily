@@ -26,10 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     Huffman.cpp \
-    File.cpp
+    File.cpp \
+    radiusprogressbar.cpp \
+    ringsmapprogressbar.cpp
 
 HEADERS  += mainwindow.h \
     Huffman.h \
-    File.h
+    File.h \
+    radiusprogressbar.h \
+    ringsmapprogressbar.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resources.qrc

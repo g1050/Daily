@@ -237,7 +237,7 @@ void File::encoded(string src,string des)
 
 /* 获得字符个数对应的表,并且传递给HuffmanTree类 */
 map<char,unsigned> File::getMap(const string &s)
-{
+{   
     ifstream in;
     char ch;
     /* out.open("tmp.txt",ios::out | ios::binary); */
@@ -247,7 +247,7 @@ map<char,unsigned> File::getMap(const string &s)
         /* out <<  ch; */
         /* cout << (int)ch << endl; */
         if(!mp.count(ch)){
-            cout << "ch = " << (int)ch << endl;
+            //cout << "ch = " << (int)ch << endl;
             mp[ch] = 1;//初始化
         }else{
             mp[ch]++;
