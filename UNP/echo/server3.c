@@ -22,7 +22,13 @@ again:
 }
 int main()
 {
-    int listenfd,connfd;
+    int i,maxi,maxfd,listenfd,connfd,sockfd;
+    int ready,client[FD_SETSIZE];
+    ssize_t n;
+    fd_set rset,allset;
+    char buf[MAXLINE];
+    socklen_t clilen;
+
     pid_t childpid;
     socklen_t clilen;
     struct sockaddr_in cliaddr,servaddr;

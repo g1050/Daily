@@ -13,12 +13,16 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,7 +32,20 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QPushButton *btn_decode;
-    QMenuBar *menuBar;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout_4;
+    QLineEdit *ln_des;
+    QToolButton *tb_des;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QRadioButton *rdb_de;
+    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *horizontalSpacer;
+    QRadioButton *rdb_in;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_3;
+    QLineEdit *ln_src;
+    QToolButton *tb_src;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -36,17 +53,89 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(619, 476);
+        MainWindow->resize(613, 469);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         btn_decode = new QPushButton(centralWidget);
         btn_decode->setObjectName(QStringLiteral("btn_decode"));
-        btn_decode->setGeometry(QRect(150, 240, 89, 25));
+        btn_decode->setGeometry(QRect(220, 300, 91, 41));
+        QFont font;
+        font.setFamily(QStringLiteral("Ubuntu"));
+        font.setPointSize(15);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(50);
+        btn_decode->setFont(font);
+        btn_decode->setStyleSheet(QLatin1String("background-color: rgb(138, 226, 52);\n"
+"font: 15pt \"Ubuntu\";"));
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(120, 220, 341, 41));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget);
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        ln_des = new QLineEdit(layoutWidget);
+        ln_des->setObjectName(QStringLiteral("ln_des"));
+
+        horizontalLayout_4->addWidget(ln_des);
+
+        tb_des = new QToolButton(layoutWidget);
+        tb_des->setObjectName(QStringLiteral("tb_des"));
+
+        horizontalLayout_4->addWidget(tb_des);
+
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(170, 80, 190, 31));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        rdb_de = new QRadioButton(widget);
+        rdb_de->setObjectName(QStringLiteral("rdb_de"));
+        QFont font1;
+        font1.setBold(true);
+        font1.setWeight(75);
+        rdb_de->setFont(font1);
+
+        horizontalLayout->addWidget(rdb_de);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        rdb_in = new QRadioButton(widget);
+        rdb_in->setObjectName(QStringLiteral("rdb_in"));
+        rdb_in->setFont(font1);
+
+        horizontalLayout->addWidget(rdb_in);
+
+        widget1 = new QWidget(centralWidget);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(120, 150, 341, 41));
+        horizontalLayout_3 = new QHBoxLayout(widget1);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        ln_src = new QLineEdit(widget1);
+        ln_src->setObjectName(QStringLiteral("ln_src"));
+
+        horizontalLayout_3->addWidget(ln_src);
+
+        tb_src = new QToolButton(widget1);
+        tb_src->setObjectName(QStringLiteral("tb_src"));
+
+        horizontalLayout_3->addWidget(tb_src);
+
         MainWindow->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 619, 28));
-        MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -62,7 +151,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        btn_decode->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        btn_decode->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213", Q_NULLPTR));
+        tb_des->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
+        rdb_de->setText(QApplication::translate("MainWindow", "\350\247\243\345\216\213\346\226\207\344\273\266", Q_NULLPTR));
+        rdb_in->setText(QApplication::translate("MainWindow", "\345\216\213\347\274\251\346\226\207\344\273\266", Q_NULLPTR));
+        tb_src->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
     } // retranslateUi
 
 };
