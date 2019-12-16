@@ -15,7 +15,7 @@ signals:
 public slots:
 
 protected:
-    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *) ;//Q_OVERRIDE;
 };
 
 #endif // RADIUSPROGRESSBAR_H

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 4.8.7
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,18 +10,18 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
-#include <QtWidgets/QToolButton>
-#include <QtWidgets/QWidget>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMainWindow>
+#include <QPushButton>
+#include <QRadioButton>
+#include <QToolButton>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -47,53 +47,53 @@ public:
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QStringLiteral("MainWindow"));
+            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(613, 469);
         MainWindow->setMinimumSize(QSize(613, 469));
         MainWindow->setMaximumSize(QSize(613, 469));
-        MainWindow->setStyleSheet(QStringLiteral(""));
+        MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         btn_decode = new QPushButton(centralWidget);
-        btn_decode->setObjectName(QStringLiteral("btn_decode"));
+        btn_decode->setObjectName(QString::fromUtf8("btn_decode"));
         btn_decode->setGeometry(QRect(240, 290, 91, 41));
         QFont font;
-        font.setFamily(QStringLiteral("Ubuntu"));
+        font.setFamily(QString::fromUtf8("Ubuntu"));
         font.setPointSize(15);
         font.setBold(false);
         font.setItalic(false);
         font.setWeight(50);
         btn_decode->setFont(font);
-        btn_decode->setStyleSheet(QLatin1String("background-color: rgb(138, 226, 52);\n"
+        btn_decode->setStyleSheet(QString::fromUtf8("background-color: rgb(138, 226, 52);\n"
 "font: 15pt \"Ubuntu\";"));
         layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(120, 220, 341, 41));
         horizontalLayout_4 = new QHBoxLayout(layoutWidget);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         ln_des = new QLineEdit(layoutWidget);
-        ln_des->setObjectName(QStringLiteral("ln_des"));
+        ln_des->setObjectName(QString::fromUtf8("ln_des"));
 
         horizontalLayout_4->addWidget(ln_des);
 
         tb_des = new QToolButton(layoutWidget);
-        tb_des->setObjectName(QStringLiteral("tb_des"));
+        tb_des->setObjectName(QString::fromUtf8("tb_des"));
 
         horizontalLayout_4->addWidget(tb_des);
 
         layoutWidget1 = new QWidget(centralWidget);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(170, 80, 250, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         rdb_de = new QRadioButton(layoutWidget1);
-        rdb_de->setObjectName(QStringLiteral("rdb_de"));
+        rdb_de->setObjectName(QString::fromUtf8("rdb_de"));
         QFont font1;
         font1.setBold(true);
         font1.setWeight(75);
@@ -102,31 +102,31 @@ public:
         horizontalLayout->addWidget(rdb_de);
 
         rdb_in = new QRadioButton(layoutWidget1);
-        rdb_in->setObjectName(QStringLiteral("rdb_in"));
+        rdb_in->setObjectName(QString::fromUtf8("rdb_in"));
         rdb_in->setFont(font1);
 
         horizontalLayout->addWidget(rdb_in);
 
         layoutWidget2 = new QWidget(centralWidget);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
         layoutWidget2->setGeometry(QRect(120, 150, 341, 41));
         horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
         ln_src = new QLineEdit(layoutWidget2);
-        ln_src->setObjectName(QStringLiteral("ln_src"));
+        ln_src->setObjectName(QString::fromUtf8("ln_src"));
 
         horizontalLayout_3->addWidget(ln_src);
 
         tb_src = new QToolButton(layoutWidget2);
-        tb_src->setObjectName(QStringLiteral("tb_src"));
+        tb_src->setObjectName(QString::fromUtf8("tb_src"));
 
         horizontalLayout_3->addWidget(tb_src);
 
         label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(496, 0, 111, 31));
         label->setFont(font1);
         MainWindow->setCentralWidget(centralWidget);
@@ -138,12 +138,12 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "xzip\345\216\213\347\274\251\350\275\257\344\273\266", Q_NULLPTR));
-        btn_decode->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213", Q_NULLPTR));
-        tb_des->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
-        rdb_de->setText(QApplication::translate("MainWindow", "\345\216\213\347\274\251\346\226\207\344\273\266", Q_NULLPTR));
-        rdb_in->setText(QApplication::translate("MainWindow", "\350\247\243\345\216\213\346\226\207\344\273\266", Q_NULLPTR));
-        tb_src->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "xzip\345\216\213\347\274\251\350\275\257\344\273\266", 0));
+        btn_decode->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213", 0));
+        tb_des->setText(QApplication::translate("MainWindow", "...", 0));
+        rdb_de->setText(QApplication::translate("MainWindow", "\345\216\213\347\274\251\346\226\207\344\273\266", 0));
+        rdb_in->setText(QApplication::translate("MainWindow", "\350\247\243\345\216\213\346\226\207\344\273\266", 0));
+        tb_src->setText(QApplication::translate("MainWindow", "...", 0));
         label->setText(QString());
     } // retranslateUi
 

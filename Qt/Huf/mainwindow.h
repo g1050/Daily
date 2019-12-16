@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QLabel>
+#include <QPainter>
 
 class MainWindow : public QMainWindow,public File
 {
@@ -16,6 +17,16 @@ class MainWindow : public QMainWindow,public File
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    void paintEvent(QPaintEvent *)
+    {
+        //QPainter p(this);
+        QPainter p;
+        p.begin(this);
+
+        p.drawPixmap(0,0,width(),height(),QPixmap("/home/gxk/Daily/Qt/Huf/壁纸.jpg"));
+        p.end();
+        return ;
+    }
 
 private slots:
     void on_btn_decode_clicked();
