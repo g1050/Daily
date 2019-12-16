@@ -15,11 +15,11 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QToolButton>
@@ -36,16 +36,15 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QLineEdit *ln_des;
     QToolButton *tb_des;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QRadioButton *rdb_de;
-    QSpacerItem *horizontalSpacer_2;
-    QSpacerItem *horizontalSpacer;
     QRadioButton *rdb_in;
-    QWidget *widget1;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *ln_src;
     QToolButton *tb_src;
+    QLabel *label;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -86,15 +85,15 @@ public:
 
         horizontalLayout_4->addWidget(tb_des);
 
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(170, 80, 190, 31));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(170, 80, 250, 31));
+        horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        rdb_de = new QRadioButton(widget);
+        rdb_de = new QRadioButton(layoutWidget1);
         rdb_de->setObjectName(QStringLiteral("rdb_de"));
         QFont font1;
         font1.setBold(true);
@@ -103,39 +102,41 @@ public:
 
         horizontalLayout->addWidget(rdb_de);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
-
-        rdb_in = new QRadioButton(widget);
+        rdb_in = new QRadioButton(layoutWidget1);
         rdb_in->setObjectName(QStringLiteral("rdb_in"));
         rdb_in->setFont(font1);
 
         horizontalLayout->addWidget(rdb_in);
 
-        widget1 = new QWidget(centralWidget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(120, 150, 341, 41));
-        horizontalLayout_3 = new QHBoxLayout(widget1);
+        layoutWidget2 = new QWidget(centralWidget);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(120, 150, 341, 41));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        ln_src = new QLineEdit(widget1);
+        ln_src = new QLineEdit(layoutWidget2);
         ln_src->setObjectName(QStringLiteral("ln_src"));
 
         horizontalLayout_3->addWidget(ln_src);
 
-        tb_src = new QToolButton(widget1);
+        tb_src = new QToolButton(layoutWidget2);
         tb_src->setObjectName(QStringLiteral("tb_src"));
 
         horizontalLayout_3->addWidget(tb_src);
 
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(496, 0, 111, 31));
+        label->setFont(font1);
         MainWindow->setCentralWidget(centralWidget);
+        btn_decode->raise();
+        layoutWidget->raise();
+        layoutWidget->raise();
+        layoutWidget->raise();
+        label->raise();
+        ln_src->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -153,9 +154,10 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         btn_decode->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213", Q_NULLPTR));
         tb_des->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
-        rdb_de->setText(QApplication::translate("MainWindow", "\350\247\243\345\216\213\346\226\207\344\273\266", Q_NULLPTR));
-        rdb_in->setText(QApplication::translate("MainWindow", "\345\216\213\347\274\251\346\226\207\344\273\266", Q_NULLPTR));
+        rdb_de->setText(QApplication::translate("MainWindow", "\345\216\213\347\274\251\346\226\207\344\273\266", Q_NULLPTR));
+        rdb_in->setText(QApplication::translate("MainWindow", "\350\247\243\345\216\213\346\226\207\344\273\266", Q_NULLPTR));
         tb_src->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
+        label->setText(QString());
     } // retranslateUi
 
 };

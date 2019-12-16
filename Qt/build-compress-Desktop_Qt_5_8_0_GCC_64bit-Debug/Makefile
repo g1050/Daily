@@ -1172,7 +1172,8 @@ mainwindow.o: ../compress/mainwindow.cpp ../compress/mainwindow.h \
 Huffman.o: ../compress/Huffman.cpp ../compress/Huffman.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Huffman.o ../compress/Huffman.cpp
 
-
+Huffman.o: ../compress/Huffman.cpp ../compress/Huffman.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Huffman.o ../compress/Huffman.cpp
 
 File.o: ../compress/File.cpp ../compress/File.h \
 		../compress/Huffman.h

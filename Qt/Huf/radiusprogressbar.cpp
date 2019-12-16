@@ -18,7 +18,7 @@ void RadiusProgressBar::paintEvent(QPaintEvent *)
 
     //qDebug() << value() << endl;
     double num = ((double)value()/maximum())*100;
-    qDebug() << value() << "   " << maximum() << endl;
+    //qDebug() << value() << "   " << maximum() << endl;
     QString valueStr = QString("%1%").arg((int)num);
     QPixmap buttomMap = QPixmap(":/resource/radius_back.png");
     QPixmap fillMap = QPixmap(":/resource/radius_front.png");
