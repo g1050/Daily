@@ -19,7 +19,7 @@ QString DataBase::getPasswdByUsername(QString username)
     query.exec(sql);
     while(query.next())
     {
-        passwd = query.value("passwd").toString() ;
+        passwd = query.value("PASSWD").toString() ;
         //qDebug() << "passwd = " << passwd ;
     }
     return passwd;
@@ -70,4 +70,26 @@ bool DataBase::insert(infomation info)
 
 
     return query.exec();
+}
+
+infomation DataBase::fetchQues(QString username)
+{
+    infomation info;
+    QSqlQuery query;
+    QString sql = QString("select * from ACCOUNT where USERNAME = '%1'").arg(username);
+    query.exec(sql);
+    while(query.next())
+    {
+        info.friendd = query.value("FRIEND").toString();
+        info.school = query.value("SCHOOL").toString();
+        info.movie = query.value("MOVIE").toString();
+    }
+    return info;
+}
+
+bool DataBase::update(infomation info)
+{
+    QSqlQuery query;
+    QString sql = QString("update ACCOUNT set PASSWD = '%1' where USERNAME = '%2'").arg(info.passwd1,info.username);
+    return query.exec(sql);
 }

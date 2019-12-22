@@ -13,6 +13,8 @@ public:
     bool ifExist(QString username);
     bool createConnection();
     bool insert(infomation info);
+    infomation fetchQues(QString username);
+    bool update(infomation info);
 };
 
 #endif // DATABASE_H

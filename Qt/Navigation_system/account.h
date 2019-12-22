@@ -11,6 +11,8 @@ public:
     bool verify(QString username,QString passwd);
     bool ifExist(QString username);
     bool registerr(infomation info);
+    bool verifyQues(infomation info);
+    bool modify(infomation info);
     Account();
 };
 

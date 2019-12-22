@@ -24,6 +24,20 @@ bool Account::registerr(infomation info)
     return nsdb->insert(info);
 }
 
+bool Account::verifyQues(infomation info)
+{
+    infomation info_fetch = nsdb->fetchQues(info.username);
+    if(info_fetch.school == info.school && info_fetch.movie == info.movie
+            && info_fetch.friendd == info.friendd)
+        return true;
+    else return false;
+}
+
+bool Account::modify(infomation info)
+{
+    return nsdb->update(info);
+}
+
 Account::Account()
 {
     nsdb = new DataBase();

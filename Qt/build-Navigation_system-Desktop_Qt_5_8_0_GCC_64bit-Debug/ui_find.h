@@ -32,24 +32,24 @@ public:
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *ln_usr;
     QSpacerItem *horizontalSpacer_3;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *ln_friend;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
-    QLineEdit *lineEdit_3;
+    QLineEdit *ln_movie;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_4;
-    QLineEdit *lineEdit_4;
+    QLineEdit *ln_school;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_6;
-    QLineEdit *lineEdit_6;
+    QLineEdit *ln_pwd1;
     QSpacerItem *horizontalSpacer_4;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_5;
-    QLineEdit *lineEdit_5;
+    QLineEdit *ln_pwd2;
     QSpacerItem *horizontalSpacer_5;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer;
@@ -77,10 +77,10 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        lineEdit = new QLineEdit(find);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        ln_usr = new QLineEdit(find);
+        ln_usr->setObjectName(QStringLiteral("ln_usr"));
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(ln_usr);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -99,15 +99,15 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        lineEdit_2 = new QLineEdit(find);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        ln_friend = new QLineEdit(find);
+        ln_friend->setObjectName(QStringLiteral("ln_friend"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lineEdit_2->sizePolicy().hasHeightForWidth());
-        lineEdit_2->setSizePolicy(sizePolicy);
+        sizePolicy.setHeightForWidth(ln_friend->sizePolicy().hasHeightForWidth());
+        ln_friend->setSizePolicy(sizePolicy);
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(ln_friend);
 
         verticalLayout->setStretch(0, 5);
         verticalLayout->setStretch(1, 5);
@@ -121,12 +121,12 @@ public:
 
         verticalLayout_2->addWidget(label_3);
 
-        lineEdit_3 = new QLineEdit(find);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        sizePolicy.setHeightForWidth(lineEdit_3->sizePolicy().hasHeightForWidth());
-        lineEdit_3->setSizePolicy(sizePolicy);
+        ln_movie = new QLineEdit(find);
+        ln_movie->setObjectName(QStringLiteral("ln_movie"));
+        sizePolicy.setHeightForWidth(ln_movie->sizePolicy().hasHeightForWidth());
+        ln_movie->setSizePolicy(sizePolicy);
 
-        verticalLayout_2->addWidget(lineEdit_3);
+        verticalLayout_2->addWidget(ln_movie);
 
         verticalLayout_2->setStretch(0, 5);
         verticalLayout_2->setStretch(1, 5);
@@ -140,12 +140,12 @@ public:
 
         verticalLayout_3->addWidget(label_4);
 
-        lineEdit_4 = new QLineEdit(find);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
-        sizePolicy.setHeightForWidth(lineEdit_4->sizePolicy().hasHeightForWidth());
-        lineEdit_4->setSizePolicy(sizePolicy);
+        ln_school = new QLineEdit(find);
+        ln_school->setObjectName(QStringLiteral("ln_school"));
+        sizePolicy.setHeightForWidth(ln_school->sizePolicy().hasHeightForWidth());
+        ln_school->setSizePolicy(sizePolicy);
 
-        verticalLayout_3->addWidget(lineEdit_4);
+        verticalLayout_3->addWidget(ln_school);
 
         verticalLayout_3->setStretch(0, 5);
         verticalLayout_3->setStretch(1, 5);
@@ -159,10 +159,10 @@ public:
 
         horizontalLayout_3->addWidget(label_6);
 
-        lineEdit_6 = new QLineEdit(find);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        ln_pwd1 = new QLineEdit(find);
+        ln_pwd1->setObjectName(QStringLiteral("ln_pwd1"));
 
-        horizontalLayout_3->addWidget(lineEdit_6);
+        horizontalLayout_3->addWidget(ln_pwd1);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -181,10 +181,10 @@ public:
 
         horizontalLayout_2->addWidget(label_5);
 
-        lineEdit_5 = new QLineEdit(find);
-        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        ln_pwd2 = new QLineEdit(find);
+        ln_pwd2->setObjectName(QStringLiteral("ln_pwd2"));
 
-        horizontalLayout_2->addWidget(lineEdit_5);
+        horizontalLayout_2->addWidget(ln_pwd2);
 
         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
