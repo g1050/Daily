@@ -1,49 +1,20 @@
-import java.util.*;
-
-class Student {
-	String number;
-	String name;
-	float score;
-
-	// Constructor
-	Student(String number1, String name1, float score1) {
-		number = number1;
-		name = name1;
-		score = score1;
-	}
-
-	// Used to print student details in main()
-	public String toString() {
-		return this.number + " " + this.name + " " + this.score;
-	}
-}
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
 public class Main {
-	public static void main(String[] args) {
-		ArrayList<Student> ar = new ArrayList<Student>();
-        
-        Scanner sc = new Scanner(System.in);
-        for(int i = 0;i<5;i++){
-            String number = sc.next();
-            String name = sc.next();
-            float score = sc.nextFloat();
-            // String name = tmp.toUpperCase();
-            Student stu = new Student(number,name,score);
-            ar.add(stu);
-        }
-        
-        // Collections.sort(ar, String.CASE_INSENSITIVE_ORDER);
+    public static void main(String[] args) {
+        GregorianCalendar gc=new GregorianCalendar();
+        Scanner in=new Scanner(System.in);
+        long millis=in.nextLong();
+        long n = in.nextLong();
+        n = millis+n*24*60*60*1000;
 
-        Collections.sort(ar, new Comparator<Student>() {
-			@Override
-			public int compare(Student s1, Student s2) {
-                return s2.name.compareToIgnoreCase(s1.name);
-			}
-		});
+        gc.setTimeInMillis(millis);
+        System.out.println(gc.get(Calendar.YEAR)+"-"+(gc.get(Calendar.MONTH)+1)+"-"+gc.get(Calendar.DAY_OF_MONTH));
 
-        for(Student stu:ar){
-            System.out.println(stu.number + " " + stu.name + " " + stu.score);
-        }
-
-    }
+        gc.setTimeInMillis(n);
+        System.out.println(gc.get(Calendar.YEAR)+"-"+(gc.get(Calendar.MONTH)+1)+"-"+gc.get(Calendar.DAY_OF_MONTH));
+    }   
 }
