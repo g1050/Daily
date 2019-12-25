@@ -3,14 +3,17 @@
 #include <string>
 #include <memory.h>
 
-const int MAXN = 100;
+const int MAXN = 0xffff; 
+const int MAXSIZE = 100;
 
 /* 边的结构 */
 struct EdgeNode{
     EdgeNode(){
         next = NULL;
+        weight = 1;
     }
-    int adjvex;//存储临界点的位置
+    int adjvex;//与表头节点相连的节点存储的下标位置
+    int weight;//改边的权重,后期可提升为数组
     EdgeNode *next;
 };
 
@@ -20,11 +23,24 @@ struct AdjList{
     EdgeNode *firstEdge;
 };
 
+/* 用来存储每个节点的到源点的最短路径 */
+struct Node{
+    int pos; //该节点的位置
+    int minWeight; //该节点与源定点的距离
+    /* 重载运算符，以使最小Node节点出队 */
+    friend bool operator<(Node a,Node b){
+        return a.minWeight > b.minWeight;
+    }
+};
+
 //定义临接表结构
 struct GraphAdjList{
 private:
-    AdjList adjlist[MAXN];
-    bool visit[MAXN];
+    AdjList adjlist[MAXSIZE];
+    bool visit[MAXSIZE];
+    int parent[MAXSIZE];//记录寻找最短路径时每个节点的父节点
+    Node node[MAXSIZE];
+    std::priority_queue<Node> q;//优先队列
     int numVertex,numEdge;
 
 public:
@@ -168,20 +184,88 @@ public:
 
         }
         std::cout << std::endl;
+        memset(visit,false,sizeof(visit));
     }
         
-    
+    void destroyGraph(){
+        EdgeNode* p = NULL;
 
+        for(int i = 0;i<numVertex;i++){
+            p = adjlist[i].firstEdge;
+            while(p){
+                EdgeNode *tmp = p;
+                p = p->next;
+                delete tmp;
+            }
+            adjlist[i].firstEdge = NULL;
+        }
+        return ;
+    }
+    
+    void Dijkstrta(int st){
+        
+        /* 每次调用该函数都要初始化 */
+        for(int i = 0;i<numEdge;i++){
+            node[i].pos = i;
+            node[i].minWeight = MAXN;//初始状态每个点到源点的距离无限大
+            parent[i] = -1; //每个节点都没有父亲节点
+            visit[i] = false;
+        }
+
+        node[st].minWeight = 0;//到自己的最短距离就是0
+        q.push(node[st]);
+
+        while(!q.empty()){
+            
+            Node tp = q.top();
+            q.pop();
+            int pos = tp.pos;//获取队首元素的值
+
+            if(visit[pos])  continue;
+            visit[pos] = true;
+            EdgeNode *p = adjlist[pos].firstEdge ;
+            while(p){//遍历所有与p相连的节点
+                int cur = p->adjvex;//获取当前节点的位置
+                if(!visit[cur] && node[cur].minWeight > node[pos].minWeight + p->weight){//整个算法的核心的
+                    node[cur].minWeight = node[pos].minWeight + p->weight;//更新值
+                    parent[cur] = pos;
+                    q.push(node[cur]);
+                }
+                p = p->next;
+            }
+
+        }
+    }
+
+    void printShortestPath(int ed){
+        if(node[ed].minWeight != MAXN){
+            std::cout << "The shortest path is " << node[ed].minWeight << std::endl;;
+        }else{
+            std::cout << "Not find." << std::endl;
+        }
+   
+        return ;
+    }
 };
 
 
 int main()
 {
     GraphAdjList *g = new GraphAdjList(5,6);
+    int st,ed;
+
     g->createGraph();
     g->print();
     g->DFS();
     g->BFS();
+    std::cout << "Please input the begin: ";
+    std::cin >> st; 
+    std::cout << "Please input the end ";
+    std::cin >> ed;
+    g->Dijkstrta(st);
+    g->printShortestPath(ed);
+
+    g->destroyGraph();
     return 0;
 }
 
