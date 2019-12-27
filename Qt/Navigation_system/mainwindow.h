@@ -7,6 +7,7 @@
 #include "register.h"
 #include "find.h"
 #include "mainmenu.h"
+#include "database.h"
 
 class MainWindow : public QMainWindow
 {
@@ -16,6 +17,7 @@ private:
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    DataBase *nsdb;
     Account *account;
 private slots:
     void on_login_clicked();

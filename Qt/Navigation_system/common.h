@@ -14,6 +14,7 @@
 #include <QSqlRecord>
 #include <QMessageBox>
 #include <vector>
+#include <queue>
 
 const int MAXSIZE = 1024;
 const int MAXN = 0xffff;
@@ -42,6 +43,17 @@ struct AdjList{
     int x;
     int y;
     QString name;
-    EdgeNode *firstEdg;
+    EdgeNode *firstEdge;
 };
+
+/*保存每个节点到源点的最短举例*/
+struct Node{
+    int pos; //该节点的位置
+    int minWeight; //该节点与源定点的距离
+    /* 重载运算符，以使最小Node节点出队 */
+    friend bool operator<(Node a,Node b){
+        return a.minWeight > b.minWeight;
+    }
+};
+
 #endif // COMMON_H

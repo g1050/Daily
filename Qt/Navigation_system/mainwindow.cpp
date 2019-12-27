@@ -5,8 +5,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
     ui.setupUi(this);
-
-    account = new Account();
+    nsdb = new DataBase();
+    account = new Account(nsdb);
 
     /***********LineEdit****************/
     ui.ln_usr->setClearButtonEnabled(true);
@@ -29,7 +29,7 @@ void MainWindow::on_login_clicked()
 //    qDebug() << username ;
 //    qDebug() << passwd   ;
     if(account->verify(username,passwd)){
-        this->mainmenu = new MainMenu(account->getType(username));
+        this->mainmenu = new MainMenu(account->getType(username),nsdb);
         this->close();
         mainmenu->show();
         //qDebug() << "Yes" ;
@@ -41,12 +41,12 @@ void MainWindow::on_login_clicked()
 
 void MainWindow::on_link_reg_clicked()
 {
-    Register reg;
+    Register reg(nsdb);
     reg.exec();
 }
 
 void MainWindow::on_link_find_clicked()
 {
-    Find find;
+    Find find(nsdb);
     find.exec();
 }

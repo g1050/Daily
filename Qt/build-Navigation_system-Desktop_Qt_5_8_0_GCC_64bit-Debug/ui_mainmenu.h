@@ -37,8 +37,8 @@ public:
     QLabel *label_4;
     QComboBox *cb_ed;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QPushButton *btn_findpath;
+    QPushButton *btn_clear;
 
     void setupUi(QWidget *MainMenu)
     {
@@ -92,15 +92,15 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        pushButton_2 = new QPushButton(MainMenu);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        btn_findpath = new QPushButton(MainMenu);
+        btn_findpath->setObjectName(QStringLiteral("btn_findpath"));
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(btn_findpath);
 
-        pushButton = new QPushButton(MainMenu);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        btn_clear = new QPushButton(MainMenu);
+        btn_clear->setObjectName(QStringLiteral("btn_clear"));
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(btn_clear);
 
 
         verticalLayout_2->addLayout(horizontalLayout);
@@ -147,8 +147,8 @@ public:
          << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\345\237\272\345\273\272\345\244\204", Q_NULLPTR)
          << QApplication::translate("MainMenu", "\347\224\265\345\255\220\345\267\245\347\250\213\345\255\246\351\231\242", Q_NULLPTR)
         );
-        pushButton_2->setText(QApplication::translate("MainMenu", "\345\257\273\346\211\276\350\267\257\345\276\204", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainMenu", "\346\270\205\347\251\272", Q_NULLPTR));
+        btn_findpath->setText(QApplication::translate("MainMenu", "\345\257\273\346\211\276\350\267\257\345\276\204", Q_NULLPTR));
+        btn_clear->setText(QApplication::translate("MainMenu", "\346\270\205\347\251\272", Q_NULLPTR));
     } // retranslateUi
 
 };

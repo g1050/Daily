@@ -6,13 +6,32 @@
 class Graph
 {
 public:
-    Graph();
+    Graph(DataBase *nsdb);
     bool createGraph();
+    void Dijkstra(int st);
+    /* 查找某个定点所在的位置 */
+    int local(QString val){
+        for(int i = 0;i<numVertex;i++){
+            if(adjlist[i].name == val){
+                return i;
+            }
+        }
+        return -1;
+    }
 private:
+    int numVertex;
+    int numEdge;
+    int parent[MAXSIZE];
+    bool visit[MAXSIZE];
+    Node node[MAXSIZE];
+    std::priority_queue<Node> q;
     DataBase *nsdb;
-    AdjList adjliist[MAXSIZE];
+    AdjList adjlist[MAXSIZE];
     std::vector<AdjList> vadjlist;
     std::vector<EdgeNode> vedgenode;
+
+
+
 };
 
 #endif // GRAPH_H

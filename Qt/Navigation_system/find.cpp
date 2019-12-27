@@ -11,10 +11,16 @@ Find::Find(QWidget *parent)
     ui.setupUi(this);
 }
 
+Find::Find(DataBase *nsdb)
+{
+    ui.setupUi(this);
+    this->nsdb = nsdb;
+}
+
 void Find::on_pushButton_clicked()
 {
     infomation info;
-    Account *account = new Account();
+    Account *account = new Account(nsdb);
     info.username = ui.ln_usr->text();
     info.passwd1 = ui.ln_pwd1->text();
     info.passwd2 = ui.ln_pwd2->text();

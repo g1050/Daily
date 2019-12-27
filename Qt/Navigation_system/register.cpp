@@ -16,6 +16,22 @@ Register::Register(QWidget *parent) :
     /***********LineEdit****************/
 }
 
+Register::Register(DataBase *nsdb)
+{
+    ui.setupUi(this);
+    this->nsdb = nsdb;
+    /***********LineEdit****************/
+    ui.ln_usr->setClearButtonEnabled(true);
+    ui.ln_nickname->setClearButtonEnabled(true);
+    ui.ln_friend->setClearButtonEnabled(true);
+    ui.ln_movie->setClearButtonEnabled(true);
+    ui.ln_pwd->setEchoMode(QLineEdit::Password);
+    ui.ln_pwd2->setEchoMode(QLineEdit::Password);
+    ui.ln_pwd->setPlaceholderText("密码长度大于6位");
+    ui.ln_pwd2->setPlaceholderText("密码长度大于6位");
+    /***********LineEdit****************/
+}
+
 void Register::on_btn_reg_clicked()
 {
     infomation info;
@@ -28,7 +44,7 @@ void Register::on_btn_reg_clicked()
     info.school = ui.ln_school->text();
     info.username = ui.ln_usr->text();
     info.friendd = ui.ln_friend->text();
-    Account *account = new Account();
+    Account *account = new Account(nsdb);
 
     if(info.username == "" | account->ifExist(info.username)){
         /***********该账号已经被注册******************/

@@ -4,7 +4,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "mapwidget.h"
+//#include "mapwidget.h"
 #include <QToolButton>
 #include <QGraphicsLineItem>
 #include <QGraphicsScene>
@@ -34,7 +34,7 @@ public slots:
     void FindPath();
     void Clear();
 private:
-    MapWidget *mapWidget;
+    //MapWidget *mapWidget;
     QLabel *startLabel;
     QLabel *endLabel;
     QComboBox *startComboBox;

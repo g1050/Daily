@@ -43,7 +43,7 @@ int Account::getType(QString username)
     return nsdb->getType(username);
 }
 
-Account::Account()
-{
-    nsdb = new DataBase();
-}
+//Account::Account(DataBase &db)
+//{
+//    nsdb = new DataBase();
+//}

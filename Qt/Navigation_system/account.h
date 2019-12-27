@@ -15,6 +15,9 @@ public:
     bool modify(infomation info);
     int getType(QString username);
     Account();
+    Account(DataBase *db){
+      nsdb = db;
+    };
 };
 
 #endif // ACCOUNT_H
