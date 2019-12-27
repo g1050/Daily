@@ -29,8 +29,12 @@ void MainWindow::on_login_clicked()
 //    qDebug() << username ;
 //    qDebug() << passwd   ;
     if(account->verify(username,passwd)){
-        qDebug() << "Yes" ;
+        this->mainmenu = new MainMenu();
+        this->close();
+        mainmenu->show();
+        //qDebug() << "Yes" ;
     }else{
+        QMessageBox::critical(NULL, "critical", "密码错误", QMessageBox::Yes);
         qDebug() << "Wrong password";
     }
 }

@@ -6,6 +6,7 @@
 #include "account.h"
 #include "register.h"
 #include "find.h"
+#include "mainmenu.h"
 
 class MainWindow : public QMainWindow
 {
@@ -24,6 +25,7 @@ private slots:
     void on_link_find_clicked();
 
 private:
+    MainMenu *mainmenu;
     Ui::MainWindow ui;
 };
 

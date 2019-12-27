@@ -1,14 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-12-22T11:05:25
+# Project created by QtCreator 2019-12-27T11:12:17
 #
 #-------------------------------------------------
 
 QT       += core gui
-QT       += sql
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Navigation_system
+TARGET = prepare
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -24,28 +24,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    account.cpp \
-    database.cpp \
-    register.cpp \
-    find.cpp \
-    mainmenu.cpp
+        mainwindow.cpp
 
-HEADERS  += mainwindow.h \
-    account.h \
-    database.h \
-    common.h \
-    register.h \
-    find.h \
-    mainmenu.h
-
-FORMS    += mainwindow.ui \
-    register.ui \
-    find.ui \
-    mainmenu.ui
-
-RESOURCES += \
-    resource.qrc
-
-DISTFILES += \
-    ../build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/平面图.png
+HEADERS  += mainwindow.h
