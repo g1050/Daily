@@ -7,8 +7,8 @@ DataBase::DataBase()
 
 DataBase::~DataBase()
 {
-//    QSqlDatabase::removeDatabase("NSDB.db");
-//    db.close();
+    QSqlDatabase::removeDatabase("NSDB.db");
+    db.close();
 }
 
 QString DataBase::getPasswdByUsername(QString username)
@@ -92,4 +92,46 @@ bool DataBase::update(infomation info)
     QSqlQuery query;
     QString sql = QString("update ACCOUNT set PASSWD = '%1' where USERNAME = '%2'").arg(info.passwd1,info.username);
     return query.exec(sql);
+}
+
+int DataBase::getType(QString username)
+{
+    QSqlQuery query;
+    QString sql = QString("select * from ACCOUNT where USERNAME = '%1'").arg(username);
+    query.exec(sql);
+    while(query.next())
+    {
+        return query.value("TYPE").toInt();
+    }
+}
+
+bool DataBase::getVertexAndEdge(std::vector<AdjList> &vadjlist, std::vector<EdgeNode> &vedgenode)
+{
+    AdjList adjlist;
+    EdgeNode edgenode;
+
+    QSqlQuery query;
+    QString sql = QString("select * from ADJVEX");
+    query.exec(sql);
+    while(query.next())
+    {
+        adjlist.name = query.value("NAME").toString();
+        adjlist.x = query.value("COORDINATEX").toInt();
+        adjlist.y = query.value("COORDINATEY").toInt();
+        vadjlist.push_back(adjlist);
+        qDebug() << adjlist.name << adjlist.x << adjlist.y;
+    }
+
+    sql = QString("select * from EDGE");
+    query.exec(sql);
+    while(query.next())
+    {
+        edgenode.v1 = query.value("V1").toString();
+        edgenode.v2 = query.value("V2").toString();
+        edgenode.weight[0] = query.value("DISTANCE").toInt();
+        edgenode.weight[1] = query.value("GREEN").toInt();
+        vedgenode.push_back(edgenode);
+        qDebug() << edgenode.v1 << edgenode.v2;
+    }
+    return true;
 }

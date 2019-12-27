@@ -29,7 +29,7 @@ void MainWindow::on_login_clicked()
 //    qDebug() << username ;
 //    qDebug() << passwd   ;
     if(account->verify(username,passwd)){
-        this->mainmenu = new MainMenu();
+        this->mainmenu = new MainMenu(account->getType(username));
         this->close();
         mainmenu->show();
         //qDebug() << "Yes" ;

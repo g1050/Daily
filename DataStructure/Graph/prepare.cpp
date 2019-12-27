@@ -6,6 +6,11 @@
 const int MAXN = 0xffff; 
 const int MAXSIZE = 100;
 
+struct Coordinate{
+    int x;
+    int y;
+};
+
 /* 边的结构 */
 struct EdgeNode{
     EdgeNode(){
@@ -17,9 +22,10 @@ struct EdgeNode{
     EdgeNode *next;
 };
 
-/* 定点结构 */
+/* 顶点结构 */
 struct AdjList{
     std::string data;//数据域
+    Coordinate coordinate;
     EdgeNode *firstEdge;
 };
 
@@ -36,15 +42,14 @@ struct Node{
 //定义临接表结构
 struct GraphAdjList{
 private:
+    int parent[MAXSIZE];//记录寻找最短路径时每个节点的父节点
     AdjList adjlist[MAXSIZE];
     bool visit[MAXSIZE];
-    int parent[MAXSIZE];//记录寻找最短路径时每个节点的父节点
     Node node[MAXSIZE];
     std::priority_queue<Node> q;//优先队列
     int numVertex,numEdge;
 
 public:
-
     GraphAdjList(int numVertex,int numEdge){
         memset(visit,false,sizeof(visit));
         this->numVertex = numVertex;
@@ -65,8 +70,10 @@ public:
 
         /* 首先输入定点信息 */
         for(int i = 0;i<numVertex;i++){
-            std::cout << "Please the " << i+1 << " vertex: " ;    
+            std::cout << "Please input the " << i+1 << " vertex: " ;    
             std::cin >> adjlist[i].data;
+            std::cout << "Please input the coordinate ";
+            std::cin >> adjlist[i].coordinate.x >> adjlist[i].coordinate.y;
             adjlist->firstEdge = NULL;//初始化每个点的next指向空
         }
 
@@ -124,6 +131,7 @@ public:
 
         for(int i = 0;i<numVertex;i++){
             std::cout << adjlist[i].data;
+            std::cout << "(" << adjlist[i].coordinate.x << "," << adjlist[i].coordinate.y << ")";
             EdgeNode *p = adjlist[i].firstEdge;
             while(p){
                 std::cout << "->" << p->adjvex;
@@ -238,6 +246,16 @@ public:
     }
 
     void printShortestPath(int ed){
+
+        std::cout << "(" << adjlist[ed].coordinate.x << "," << adjlist[ed].coordinate.y << ")" << std::endl;
+
+        int q = parent[ed];
+        while(q != -1){
+            std::cout << "(" << adjlist[q].coordinate.x << "," << adjlist[q].coordinate.y << ")" << std::endl;
+            /* 向上一节点转移 */
+            q = parent[q];
+        }
+
         if(node[ed].minWeight != MAXN){
             std::cout << "The shortest path is " << node[ed].minWeight << std::endl;;
         }else{
@@ -251,17 +269,19 @@ public:
 
 int main()
 {
-    GraphAdjList *g = new GraphAdjList(5,6);
+    GraphAdjList *g = new GraphAdjList(5,5);
     int st,ed;
 
     g->createGraph();
     g->print();
-    g->DFS();
-    g->BFS();
+    /* g->DFS(); */
+    /* g->BFS(); */
+
     std::cout << "Please input the begin: ";
     std::cin >> st; 
     std::cout << "Please input the end ";
     std::cin >> ed;
+
     g->Dijkstrta(st);
     g->printShortestPath(ed);
 

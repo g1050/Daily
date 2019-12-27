@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     database.cpp \
     register.cpp \
     find.cpp \
-    mainmenu.cpp
+    mainmenu.cpp \
+    graph.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -37,7 +38,8 @@ HEADERS  += mainwindow.h \
     common.h \
     register.h \
     find.h \
-    mainmenu.h
+    mainmenu.h \
+    graph.h
 
 FORMS    += mainwindow.ui \
     register.ui \

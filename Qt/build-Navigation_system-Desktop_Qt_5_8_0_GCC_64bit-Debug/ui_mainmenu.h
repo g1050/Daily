@@ -44,7 +44,9 @@ public:
     {
         if (MainMenu->objectName().isEmpty())
             MainMenu->setObjectName(QStringLiteral("MainMenu"));
-        MainMenu->resize(950, 543);
+        MainMenu->resize(1300, 863);
+        MainMenu->setMinimumSize(QSize(1300, 863));
+        MainMenu->setMaximumSize(QSize(1300, 863));
         horizontalLayout_3 = new QHBoxLayout(MainMenu);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_2 = new QHBoxLayout();
@@ -103,6 +105,9 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout);
 
+        verticalLayout_2->setStretch(0, 3);
+        verticalLayout_2->setStretch(1, 3);
+        verticalLayout_2->setStretch(2, 4);
 
         horizontalLayout_2->addLayout(verticalLayout_2);
 
@@ -123,7 +128,25 @@ public:
         lb_map->setText(QString());
         lb_hello->setText(QString());
         label_3->setText(QApplication::translate("MainMenu", "\350\265\267\347\202\271", Q_NULLPTR));
+        cb_st->clear();
+        cb_st->insertItems(0, QStringList()
+         << QApplication::translate("MainMenu", "\344\270\234\345\214\272\346\225\231\345\255\246\346\245\274", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\347\224\265\345\255\220\345\267\245\347\250\213\345\255\246\351\231\242", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\345\237\272\345\273\272\345\244\204", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\351\225\277\345\256\211\346\240\241\345\214\272\345\256\266\345\261\236\351\231\242", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\351\225\277\346\200\235\345\205\254\345\257\223", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\351\225\277\346\231\272\345\205\254\345\257\223", Q_NULLPTR)
+        );
         label_4->setText(QApplication::translate("MainMenu", "\347\273\210\347\202\271", Q_NULLPTR));
+        cb_ed->clear();
+        cb_ed->insertItems(0, QStringList()
+         << QApplication::translate("MainMenu", "\344\270\234\345\214\272\346\225\231\345\255\246\346\245\274", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\351\225\277\346\231\272\345\205\254\345\257\223", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\351\225\277\346\200\235\345\205\254\345\257\223", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\351\225\277\345\256\211\346\240\241\345\214\272\345\256\266\345\261\236\351\231\242", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\345\237\272\345\273\272\345\244\204", Q_NULLPTR)
+         << QApplication::translate("MainMenu", "\347\224\265\345\255\220\345\267\245\347\250\213\345\255\246\351\231\242", Q_NULLPTR)
+        );
         pushButton_2->setText(QApplication::translate("MainMenu", "\345\257\273\346\211\276\350\267\257\345\276\204", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainMenu", "\346\270\205\347\251\272", Q_NULLPTR));
     } // retranslateUi

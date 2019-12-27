@@ -13,6 +13,10 @@
 #include <QSqlDriver>
 #include <QSqlRecord>
 #include <QMessageBox>
+#include <vector>
+
+const int MAXSIZE = 1024;
+const int MAXN = 0xffff;
 
 typedef struct{
        QString nickname;
@@ -23,4 +27,21 @@ typedef struct{
        QString friendd;
        QString movie;
 }infomation ;
+
+//边
+struct EdgeNode{
+    QString v1;
+    QString v2;
+    int weight[2];
+    int adjvex;
+    EdgeNode *next;
+};
+
+//点
+struct AdjList{
+    int x;
+    int y;
+    QString name;
+    EdgeNode *firstEdg;
+};
 #endif // COMMON_H

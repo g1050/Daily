@@ -13,6 +13,7 @@ public:
     bool registerr(infomation info);
     bool verifyQues(infomation info);
     bool modify(infomation info);
+    int getType(QString username);
     Account();
 };
 

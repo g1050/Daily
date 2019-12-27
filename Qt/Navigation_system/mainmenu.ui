@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>950</width>
-    <height>543</height>
+    <width>1300</width>
+    <height>863</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1300</width>
+    <height>863</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1300</width>
+    <height>863</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -30,7 +42,7 @@
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="3,3,4">
        <item>
         <widget class="QLabel" name="lb_hello">
          <property name="text">
@@ -48,7 +60,38 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cb_st"/>
+          <widget class="QComboBox" name="cb_st">
+           <item>
+            <property name="text">
+             <string>东区教学楼</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>电子工程学院</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>西安邮电大学基建处</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>西安邮电大学长安校区家属院</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>长思公寓</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>长智公寓</string>
+            </property>
+           </item>
+          </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_4">
@@ -58,7 +101,38 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cb_ed"/>
+          <widget class="QComboBox" name="cb_ed">
+           <item>
+            <property name="text">
+             <string>东区教学楼</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>长智公寓</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>长思公寓</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>西安邮电大学长安校区家属院</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>西安邮电大学基建处</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>电子工程学院</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>

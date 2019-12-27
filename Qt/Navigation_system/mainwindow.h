@@ -26,6 +26,7 @@ private slots:
 
 private:
     MainMenu *mainmenu;
+
     Ui::MainWindow ui;
 };
 
