@@ -135,3 +135,18 @@ bool DataBase::getVertexAndEdge(std::vector<AdjList> &vadjlist, std::vector<Edge
     }
     return true;
 }
+
+bool DataBase::getCoordinate(int &x, int &y, QString name)
+{
+    QSqlQuery query;
+    QString sql = QString("select * from ADJVEX where NAME = '%1'").arg(name);
+    query.exec(sql);
+    while(query.next())
+    {
+        x =  query.value("COORDINATEX").toInt();
+        y = query.value("COORDINATEy").toInt();
+        //qDebug() << x << " " << y ;
+        return true;
+    }
+    return false;
+}

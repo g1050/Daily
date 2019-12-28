@@ -15,6 +15,7 @@
 #include <QMessageBox>
 #include <vector>
 #include <queue>
+#include <cmath>
 #include <QMouseEvent>
 
 const int MAXSIZE = 1024;

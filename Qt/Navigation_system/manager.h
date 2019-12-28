@@ -23,10 +23,15 @@ public:
 //       update();
       this->ui.ln_mouse->setText(msg);
       this->ui.lb_mouse2->setText(msg);
-      qDebug() << msg ;
+      //qDebug() << msg ;
       update();
     }
+
+private:
+    DataBase *nsdb;
 private slots:
+
+
     void on_btn_submit_clicked();
 
     void on_btn_cancel_clicked();
@@ -42,6 +47,25 @@ private slots:
     void on_btn_all_2_clicked();
 
     void on_btn_search_2_clicked();
+
+    void on_btn_add2_clicked();
+
+    void on_btn_delete2_clicked();
+
+    void on_btn_distance_clicked();
+
+
+    void on_btn_submit_3_clicked();
+
+    void on_btn_cancel_3_clicked();
+
+    void on_btn_all_3_clicked();
+
+    void on_btn_add3_clicked();
+
+    void on_btn_delete3_clicked();
+
+    void on_btn_search_3_clicked();
 
 private:
     QSqlTableModel * model;

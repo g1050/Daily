@@ -35,7 +35,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -275,7 +275,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="ln_res"/>
+          <widget class="QLineEdit" name="ln_distance"/>
          </item>
          <item>
           <spacer name="horizontalSpacer_32">
@@ -471,13 +471,13 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="widget">
       <attribute name="title">
        <string>道路信息管理</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QTableView" name="tableView_2"/>
+        <widget class="QTableView" name="tv_edge"/>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -594,7 +594,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>输入要查找的用户</string>
+            <string>输入要查找的道路</string>
            </property>
           </widget>
          </item>

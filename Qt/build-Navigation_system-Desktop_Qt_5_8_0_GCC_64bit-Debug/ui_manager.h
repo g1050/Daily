@@ -64,7 +64,7 @@ public:
     QLineEdit *ln_ed;
     QSpacerItem *horizontalSpacer_31;
     QPushButton *btn_distance;
-    QLineEdit *ln_res;
+    QLineEdit *ln_distance;
     QSpacerItem *horizontalSpacer_32;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_8;
@@ -87,7 +87,7 @@ public:
     QSpacerItem *horizontalSpacer_14;
     QWidget *widget;
     QVBoxLayout *verticalLayout_4;
-    QTableView *tableView_2;
+    QTableView *tv_edge;
     QHBoxLayout *horizontalLayout_7;
     QSpacerItem *horizontalSpacer_15;
     QPushButton *btn_submit_3;
@@ -265,10 +265,10 @@ public:
 
         horizontalLayout_6->addWidget(btn_distance);
 
-        ln_res = new QLineEdit(tab_2);
-        ln_res->setObjectName(QStringLiteral("ln_res"));
+        ln_distance = new QLineEdit(tab_2);
+        ln_distance->setObjectName(QStringLiteral("ln_distance"));
 
-        horizontalLayout_6->addWidget(ln_res);
+        horizontalLayout_6->addWidget(ln_distance);
 
         horizontalSpacer_32 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -368,10 +368,10 @@ public:
         widget->setObjectName(QStringLiteral("widget"));
         verticalLayout_4 = new QVBoxLayout(widget);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        tableView_2 = new QTableView(widget);
-        tableView_2->setObjectName(QStringLiteral("tableView_2"));
+        tv_edge = new QTableView(widget);
+        tv_edge->setObjectName(QStringLiteral("tv_edge"));
 
-        verticalLayout_4->addWidget(tableView_2);
+        verticalLayout_4->addWidget(tv_edge);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
@@ -483,7 +483,7 @@ public:
 
         retranslateUi(Manager);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Manager);
@@ -514,7 +514,7 @@ public:
         btn_cancel_3->setText(QApplication::translate("Manager", "\346\222\244\351\224\200\346\223\215\344\275\234", Q_NULLPTR));
         btn_add3->setText(QApplication::translate("Manager", "\345\242\236\345\212\240", Q_NULLPTR));
         btn_delete3->setText(QApplication::translate("Manager", "\345\210\240\351\231\244", Q_NULLPTR));
-        label_5->setText(QApplication::translate("Manager", "\350\276\223\345\205\245\350\246\201\346\237\245\346\211\276\347\232\204\347\224\250\346\210\267", Q_NULLPTR));
+        label_5->setText(QApplication::translate("Manager", "\350\276\223\345\205\245\350\246\201\346\237\245\346\211\276\347\232\204\351\201\223\350\267\257", Q_NULLPTR));
         btn_search_3->setText(QApplication::translate("Manager", "\346\237\245\346\211\276", Q_NULLPTR));
         btn_all_3->setText(QApplication::translate("Manager", "\346\230\276\347\244\272\345\205\250\351\203\250", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("Manager", "\351\201\223\350\267\257\344\277\241\346\201\257\347\256\241\347\220\206", Q_NULLPTR));
