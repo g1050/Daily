@@ -6,6 +6,7 @@
 #include "database.h"
 #include "manager.h"
 #include <QMainWindow>
+#include "mylabel.h"
 
 class MainMenu : public QMainWindow
 {
@@ -18,8 +19,9 @@ private:
     int type;
     DataBase *nsdb;
     Graph *graph;
-    QGraphicsScene *scene;
-    QGraphicsView *view;
+    MyLabel *mylabel;
+//    QGraphicsScene *scene;
+//    QGraphicsView *view;
     void initScene();
 public:
     explicit MainMenu(QMainWindow *parent = 0);
@@ -44,12 +46,8 @@ public:
                 p.drawLine(vcoordinate[i].x,vcoordinate[i].y,vcoordinate[i+1].x,vcoordinate[i+1].y);
             }
         }
-
-
-
 //        p.drawRect(200,200,100,50);
 //        p.drawEllipse(QPoint(150,150),50,50);
-
         p.end();
         update();
         return ;

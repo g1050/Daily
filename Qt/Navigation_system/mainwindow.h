@@ -8,6 +8,7 @@
 #include "find.h"
 #include "mainmenu.h"
 #include "database.h"
+#include "mylabel.h"
 
 class MainWindow : public QMainWindow
 {

@@ -2,12 +2,12 @@
 
 void MainMenu::initScene()
 {
-    QGraphicsPixmapItem *item =
-            scene->addPixmap (QPixmap("/home/gxk/Daily/Qt"
-                                      "/build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/"
-                                      "平面图.png"));
-//    item->setFlag (QGraphicsItem::ItemIsMovable);
-    item->setPos (-500, -420);
+//    QGraphicsPixmapItem *item =
+//            scene->addPixmap (QPixmap("/home/gxk/Daily/Qt"
+//                                      "/build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/"
+//                                      "平面图.png"));
+////    item->setFlag (QGraphicsItem::ItemIsMovable);
+//    item->setPos (-500, -420);
 }
 
 MainMenu::MainMenu(QMainWindow *parent) :
@@ -22,14 +22,21 @@ MainMenu::MainMenu(int type,DataBase *nsdb)
     this->nsdb = nsdb;
 
     /*******************Draw Background******************/
-    scene = new QGraphicsScene;
-    scene->setSceneRect (-100, -100, 700, 700);
-    initScene();
-    view = new QGraphicsView;
-    view->setScene (scene);
-    view->setMinimumSize (800, 800);
-    view->show ();
-    setCentralWidget(view);
+//      QWidget *mainwidget=new QWidget;
+//      mylabel = new MyLabel();
+//      QHBoxLayout *layout = new QHBoxLayout(mainwidget);
+//      ui.verticalLayout->addLayout(mylabel);
+//      layout->addWidget(ui.verticalLayout_3);
+//      layout->addWidget(mylabel);
+//      setCentralWidget(mainwidget);
+//    scene = new QGraphicsScene;
+//    scene->setSceneRect (-100, -100, 700, 700);
+//    initScene();
+//    view = new QGraphicsView;
+//    view->setScene (scene);
+//    view->setMinimumSize (800, 800);
+//    view->show ();
+//    setCentralWidget(view);
     /*******************************************/
 
     /*************Get Vertex to add item****************/
