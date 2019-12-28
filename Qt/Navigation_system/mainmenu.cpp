@@ -8,9 +8,21 @@ MainMenu::MainMenu(QWidget *parent) :
 
 MainMenu::MainMenu(int type,DataBase *nsdb)
 {
-    this->nsdb = nsdb;
-    graph = new Graph(nsdb);
     ui.setupUi(this);
+    this->nsdb = nsdb;
+
+    /*************Get Vertex to add item****************/
+    this->nsdb->getVertex(vadjlist);
+    //ui.cb_ed->disconnect();
+    ui.cb_st->clear();
+    for(int i = 0;i<vadjlist.size();i++){
+        ui.cb_st->addItem(vadjlist[i].name);
+        ui.cb_ed->addItem(vadjlist[i].name);
+    }
+    /*****************************/
+
+    graph = new Graph(nsdb);
+
     this->type = type;
     if(this->type != 1){
        ui.btn_manage->hide();
@@ -23,10 +35,21 @@ void MainMenu::on_btn_findpath_clicked()
 {
     QString st = ui.cb_st->currentText();
     QString ed = ui.cb_ed->currentText();
+
     int i = graph->local(st);
     int j = graph->local(ed);
 
-    qDebug() << st << " " <<ed;
+    //qDebug() << "i = " << i << "j = " << j ;
+    //调用寻找各点到源点的最短距离
+    graph->Dijkstra(i);
+    //寻找最短路的路径
+    graph->getPath(j,vcoordinate);
+    update();
+
+
+
+
+    //qDebug() << st << " " <<ed;
 
 }
 

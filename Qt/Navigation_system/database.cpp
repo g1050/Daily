@@ -119,7 +119,7 @@ bool DataBase::getVertexAndEdge(std::vector<AdjList> &vadjlist, std::vector<Edge
         adjlist.x = query.value("COORDINATEX").toInt();
         adjlist.y = query.value("COORDINATEY").toInt();
         vadjlist.push_back(adjlist);
-        qDebug() << adjlist.name << adjlist.x << adjlist.y;
+        //qDebug() << adjlist.name << adjlist.x << adjlist.y;
     }
 
     sql = QString("select * from EDGE");
@@ -131,9 +131,27 @@ bool DataBase::getVertexAndEdge(std::vector<AdjList> &vadjlist, std::vector<Edge
         edgenode.weight[0] = query.value("DISTANCE").toInt();
         edgenode.weight[1] = query.value("GREEN").toInt();
         vedgenode.push_back(edgenode);
-        qDebug() << edgenode.v1 << edgenode.v2;
+        //qDebug() << edgenode.v1 << edgenode.v2;
     }
     return true;
+}
+
+bool DataBase::getVertex(std::vector<AdjList> &vadjlist)
+{
+    AdjList adjlist;
+    QSqlQuery query;
+    QString sql = QString("select * from ADJVEX");
+    query.exec(sql);
+    while(query.next())
+    {
+        adjlist.name = query.value("NAME").toString();
+        adjlist.x = query.value("COORDINATEX").toInt();
+        adjlist.y = query.value("COORDINATEY").toInt();
+        if(adjlist.name != "")
+            vadjlist.push_back(adjlist);
+        //qDebug() << adjlist.name << adjlist.x << adjlist.y;
+    }
+
 }
 
 bool DataBase::getCoordinate(int &x, int &y, QString name)

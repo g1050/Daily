@@ -9,6 +9,7 @@ public:
     Graph(DataBase *nsdb);
     bool createGraph();
     void Dijkstra(int st);
+    bool getPath(int ed, std::vector<Coordinate> &vcoordinate);
     /* 查找某个定点所在的位置 */
     int local(QString val){
         for(int i = 0;i<numVertex;i++){

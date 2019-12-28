@@ -65,7 +65,7 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         lb_map = new QLabel(MainMenu);
         lb_map->setObjectName(QStringLiteral("lb_map"));
-        lb_map->setPixmap(QPixmap(QString::fromUtf8("../build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/\345\271\263\351\235\242\345\233\276.png")));
+        lb_map->setStyleSheet(QStringLiteral("\\"));
         lb_map->setScaledContents(true);
 
         horizontalLayout_2->addWidget(lb_map);
@@ -210,28 +210,10 @@ public:
         label->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
         btn_manage->setText(QApplication::translate("MainMenu", "\347\256\241\347\220\206\345\257\274\350\210\252\347\263\273\347\273\237", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainMenu", "\350\265\267\347\202\271", Q_NULLPTR));
-        cb_st->clear();
-        cb_st->insertItems(0, QStringList()
-         << QApplication::translate("MainMenu", "\344\270\234\345\214\272\346\225\231\345\255\246\346\245\274", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\347\224\265\345\255\220\345\267\245\347\250\213\345\255\246\351\231\242", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\345\237\272\345\273\272\345\244\204", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\351\225\277\345\256\211\346\240\241\345\214\272\345\256\266\345\261\236\351\231\242", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\351\225\277\346\200\235\345\205\254\345\257\223", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\351\225\277\346\231\272\345\205\254\345\257\223", Q_NULLPTR)
-        );
         label_4->setText(QApplication::translate("MainMenu", "\347\273\210\347\202\271", Q_NULLPTR));
-        cb_ed->clear();
-        cb_ed->insertItems(0, QStringList()
-         << QApplication::translate("MainMenu", "\344\270\234\345\214\272\346\225\231\345\255\246\346\245\274", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\351\225\277\346\231\272\345\205\254\345\257\223", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\351\225\277\346\200\235\345\205\254\345\257\223", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\351\225\277\345\256\211\346\240\241\345\214\272\345\256\266\345\261\236\351\231\242", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\350\245\277\345\256\211\351\202\256\347\224\265\345\244\247\345\255\246\345\237\272\345\273\272\345\244\204", Q_NULLPTR)
-         << QApplication::translate("MainMenu", "\347\224\265\345\255\220\345\267\245\347\250\213\345\255\246\351\231\242", Q_NULLPTR)
-        );
-        btn_findpath->setText(QApplication::translate("MainMenu", "\345\257\273\346\211\276\350\267\257\345\276\204", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainMenu", "PushButton", Q_NULLPTR));
-        btn_clear->setText(QApplication::translate("MainMenu", "\346\270\205\347\251\272", Q_NULLPTR));
+        btn_findpath->setText(QApplication::translate("MainMenu", "\346\234\200\350\277\221\350\267\257\347\272\277", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainMenu", "\346\234\200\347\276\216\350\267\257\347\272\277", Q_NULLPTR));
+        btn_clear->setText(QApplication::translate("MainMenu", "\345\210\267\346\226\260", Q_NULLPTR));
         lb_hello->setText(QString());
     } // retranslateUi
 

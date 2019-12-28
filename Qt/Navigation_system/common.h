@@ -17,6 +17,7 @@
 #include <queue>
 #include <cmath>
 #include <QMouseEvent>
+#include <QPainter>
 
 const int MAXSIZE = 1024;
 const int MAXN = 0xffff;
@@ -56,6 +57,11 @@ struct Node{
     friend bool operator<(Node a,Node b){
         return a.minWeight > b.minWeight;
     }
+};
+
+struct Coordinate{
+    int x;
+    int y;
 };
 
 #endif // COMMON_H

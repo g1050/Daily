@@ -17,6 +17,7 @@ public:
     bool update(infomation info);
     int getType(QString username);
     bool getVertexAndEdge(std::vector<AdjList> &vadjlist,std::vector<EdgeNode> &vedgenode);
+    bool getVertex(std::vector<AdjList> &vadjlist);
     bool getCoordinate(int &x,int &y,QString name);
 };
 

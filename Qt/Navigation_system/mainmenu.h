@@ -9,10 +9,48 @@
 class MainMenu : public QWidget
 {
     Q_OBJECT
+private:
+    std::vector<Coordinate> vcoordinate;
+    std::vector<AdjList> vadjlist;
+    Ui::MainMenu ui;
+    Manager *manager;
+    int type;
+    DataBase *nsdb;
+    Graph *graph;
 
 public:
     explicit MainMenu(QWidget *parent = 0);
     MainMenu(int type,DataBase *nsdb);
+    void paintEvent(QPaintEvent *)
+    {
+        //QPainter p(this);
+        QPainter p;
+
+        QPen pen;
+        pen.setWidth(5);
+        pen.setColor(Qt::red);
+        pen.setStyle(Qt::DashLine);
+
+        p.begin(this);
+        p.setPen(pen);
+
+        int size = vcoordinate.size();
+        qDebug() << "size = " <<size;
+        if(size != 0){
+            for(int i = 0;i<size-1;i++){
+                p.drawLine(vcoordinate[i].x,vcoordinate[i].y,vcoordinate[i+1].x,vcoordinate[i+1].y);
+            }
+        }
+
+
+
+//        p.drawRect(200,200,100,50);
+//        p.drawEllipse(QPoint(150,150),50,50);
+
+        p.end();
+        update();
+        return ;
+    }
 //    void mousePressEvent(QMouseEvent *event)
 //    {
 //       QString msg=QString("鼠标位置:%1,%2").arg(event->pos().x()).arg(event->pos().y());
@@ -32,12 +70,7 @@ private slots:
 
     void on_btn_manage_clicked();
 
-private:
-    Ui::MainMenu ui;
-    Manager *manager;
-    int type;
-    DataBase *nsdb;
-    Graph *graph;
+
 };
 
 #endif // MAINMENU_H

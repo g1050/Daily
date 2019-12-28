@@ -21,7 +21,7 @@ bool Graph::createGraph()
         adjlist[i].x = vadjlist[i].x;
         adjlist[i].y = vadjlist[i].y;
         adjlist[i].firstEdge = NULL;
-        qDebug() << adjlist[i].name << adjlist[i].x ;
+        //qDebug() << adjlist[i].name << adjlist[i].x ;
     }
 
     for(int k = 0;k<numEdge;k++){
@@ -42,6 +42,8 @@ bool Graph::createGraph()
             //申请新节点，直接插入就可以
             EdgeNode *e = new EdgeNode();
             e->adjvex = j;
+            e->weight[0] = vedgenode[k].weight[0];
+            e->weight[1] = vedgenode[k].weight[1];
             adjlist[i].firstEdge = e;
         }else{//对应已经加入图中的节点
             //指针后移，将新节点插入最后
@@ -50,6 +52,8 @@ bool Graph::createGraph()
                 p = p->next;
             }
             EdgeNode *e = new EdgeNode();
+            e->weight[0] = vedgenode[k].weight[0];
+            e->weight[1] = vedgenode[k].weight[1];
             e->adjvex = j;
             p->next = e;
         }
@@ -57,6 +61,8 @@ bool Graph::createGraph()
             //申请新节点，直接插入就可以
             EdgeNode *e = new EdgeNode();
             e->adjvex = i;
+            e->weight[0] = vedgenode[k].weight[0];
+            e->weight[1] = vedgenode[k].weight[1];
             adjlist[j].firstEdge = e;
         }else{//对应已经加入图中的节点
             //指针后移，将新节点插入最后
@@ -65,6 +71,8 @@ bool Graph::createGraph()
                 p = p->next;
             }
             EdgeNode *e = new EdgeNode();
+            e->weight[0] = vedgenode[k].weight[0];
+            e->weight[1] = vedgenode[k].weight[1];
             e->adjvex = i;
             p->next = e;
         }
@@ -78,7 +86,7 @@ void Graph::Dijkstra(int st)
 {
 
     /* 每次调用该函数都要初始化 */
-    for(int i = 0;i<numEdge;i++){
+    for(int i = 0;i<numVertex;i++){
         node[i].pos = i;
         node[i].minWeight = MAXN;//初始状态每个点到源点的距离无限大
         parent[i] = -1; //每个节点都没有父亲节点
@@ -101,13 +109,47 @@ void Graph::Dijkstra(int st)
             int cur = p->adjvex;//获取当前节点的位置
             //后期优化的点weight数组
             if(!visit[cur] && node[cur].minWeight > node[pos].minWeight + p->weight[0]){//整个算法的核心的
+
                 node[cur].minWeight = node[pos].minWeight + p->weight[0];//更新值
+                qDebug() << "Min_weight" << node[cur].minWeight;
                 parent[cur] = pos;
                 q.push(node[cur]);
             }
             p = p->next;
         }
 
+    }
+
+}
+
+bool Graph::getPath(int ed,std::vector<Coordinate> &vcoordinate)
+{
+    Coordinate coordinate;
+
+
+    //寻找终点的最短距离
+    if(node[ed].minWeight != MAXN){
+        coordinate.x = adjlist[ed].x;
+        coordinate.y = adjlist[ed].y;
+        //qDebug() << coordinate.x << coordinate.y << "Coordinate";
+        vcoordinate.push_back(coordinate);
+        int q = parent[ed];
+        while(q != -1){
+            //std::cout << "(" << adjlist[q].coordinate.x << "," << adjlist[q].coordinate.y << ")" << std::endl;
+            coordinate.x = adjlist[q].x;
+            coordinate.y = adjlist[q].y;
+            vcoordinate.push_back(coordinate);
+            //qDebug() << coordinate.x << coordinate.y << "Coordinate";
+            //qDebug() << q;
+            /* 向上一节点转移 */
+            q = parent[q];
+        }
+
+        qDebug() << "The shortest path is " << node[ed].minWeight ;
+        return true;
+    }else{
+        qDebug() << "Not find." ;
+        return false;
     }
 
 }
