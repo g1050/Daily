@@ -21,16 +21,14 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <mylabel.h>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_MainMenu
 {
 public:
-    QVBoxLayout *verticalLayout_4;
-    QHBoxLayout *horizontalLayout_2;
-    MyLabel *lb_map;
+    QLabel *lb_hello;
+    QWidget *widget;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_2;
     QLabel *label;
@@ -51,7 +49,6 @@ public:
     QSpacerItem *verticalSpacer_2;
     QPushButton *btn_clear;
     QSpacerItem *verticalSpacer;
-    QLabel *lb_hello;
 
     void setupUi(QWidget *MainMenu)
     {
@@ -60,26 +57,21 @@ public:
         MainMenu->resize(1300, 863);
         MainMenu->setMinimumSize(QSize(1300, 863));
         MainMenu->setMaximumSize(QSize(1300, 863));
-        verticalLayout_4 = new QVBoxLayout(MainMenu);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        lb_map = new MyLabel(MainMenu);
-        lb_map->setObjectName(QStringLiteral("lb_map"));
-        lb_map->setStyleSheet(QStringLiteral(""));
-        lb_map->setPixmap(QPixmap(QString::fromUtf8("../build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/\345\271\263\351\235\242\345\233\276.png")));
-        lb_map->setScaledContents(true);
-
-        horizontalLayout_2->addWidget(lb_map);
-
-        verticalLayout_3 = new QVBoxLayout();
+        lb_hello = new QLabel(MainMenu);
+        lb_hello->setObjectName(QStringLiteral("lb_hello"));
+        lb_hello->setGeometry(QRect(9, 837, 16, 17));
+        widget = new QWidget(MainMenu);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(400, 10, 127, 820));
+        verticalLayout_3 = new QVBoxLayout(widget);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        label_2 = new QLabel(MainMenu);
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         verticalLayout_3->addWidget(label_2);
 
-        label = new QLabel(MainMenu);
+        label = new QLabel(widget);
         label->setObjectName(QStringLiteral("label"));
 
         verticalLayout_3->addWidget(label);
@@ -90,7 +82,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        btn_manage = new QPushButton(MainMenu);
+        btn_manage = new QPushButton(widget);
         btn_manage->setObjectName(QStringLiteral("btn_manage"));
 
         horizontalLayout->addWidget(btn_manage);
@@ -104,7 +96,7 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        label_3 = new QLabel(MainMenu);
+        label_3 = new QLabel(widget);
         label_3->setObjectName(QStringLiteral("label_3"));
         QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -114,7 +106,7 @@ public:
 
         verticalLayout_2->addWidget(label_3);
 
-        cb_st = new QComboBox(MainMenu);
+        cb_st = new QComboBox(widget);
         cb_st->setObjectName(QStringLiteral("cb_st"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
@@ -124,7 +116,7 @@ public:
 
         verticalLayout_2->addWidget(cb_st);
 
-        label_4 = new QLabel(MainMenu);
+        label_4 = new QLabel(widget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setEnabled(true);
         sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
@@ -132,7 +124,7 @@ public:
 
         verticalLayout_2->addWidget(label_4);
 
-        cb_ed = new QComboBox(MainMenu);
+        cb_ed = new QComboBox(widget);
         cb_ed->setObjectName(QStringLiteral("cb_ed"));
 
         verticalLayout_2->addWidget(cb_ed);
@@ -150,7 +142,7 @@ public:
 
         verticalLayout->addItem(verticalSpacer_4);
 
-        btn_findpath = new QPushButton(MainMenu);
+        btn_findpath = new QPushButton(widget);
         btn_findpath->setObjectName(QStringLiteral("btn_findpath"));
 
         verticalLayout->addWidget(btn_findpath);
@@ -159,7 +151,7 @@ public:
 
         verticalLayout->addItem(verticalSpacer_3);
 
-        pushButton = new QPushButton(MainMenu);
+        pushButton = new QPushButton(widget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         verticalLayout->addWidget(pushButton);
@@ -168,7 +160,7 @@ public:
 
         verticalLayout->addItem(verticalSpacer_2);
 
-        btn_clear = new QPushButton(MainMenu);
+        btn_clear = new QPushButton(widget);
         btn_clear->setObjectName(QStringLiteral("btn_clear"));
 
         verticalLayout->addWidget(btn_clear);
@@ -186,19 +178,6 @@ public:
         verticalLayout_3->setStretch(3, 3);
         verticalLayout_3->setStretch(4, 3);
 
-        horizontalLayout_2->addLayout(verticalLayout_3);
-
-        horizontalLayout_2->setStretch(0, 9);
-        horizontalLayout_2->setStretch(1, 1);
-
-        verticalLayout_4->addLayout(horizontalLayout_2);
-
-        lb_hello = new QLabel(MainMenu);
-        lb_hello->setObjectName(QStringLiteral("lb_hello"));
-
-        verticalLayout_4->addWidget(lb_hello);
-
-
         retranslateUi(MainMenu);
 
         QMetaObject::connectSlotsByName(MainMenu);
@@ -207,7 +186,7 @@ public:
     void retranslateUi(QWidget *MainMenu)
     {
         MainMenu->setWindowTitle(QApplication::translate("MainMenu", "Form", Q_NULLPTR));
-        lb_map->setText(QString());
+        lb_hello->setText(QString());
         label_2->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
         label->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
         btn_manage->setText(QApplication::translate("MainMenu", "\347\256\241\347\220\206\345\257\274\350\210\252\347\263\273\347\273\237", Q_NULLPTR));
@@ -216,7 +195,6 @@ public:
         btn_findpath->setText(QApplication::translate("MainMenu", "\346\234\200\350\277\221\350\267\257\347\272\277", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainMenu", "\346\234\200\347\276\216\350\267\257\347\272\277", Q_NULLPTR));
         btn_clear->setText(QApplication::translate("MainMenu", "\345\210\267\346\226\260", Q_NULLPTR));
-        lb_hello->setText(QString());
     } // retranslateUi
 
 };

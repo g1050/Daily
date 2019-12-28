@@ -81,7 +81,7 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
 }
 
 const QMetaObject MainMenu::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_MainMenu.data,
+    { &QMainWindow::staticMetaObject, qt_meta_stringdata_MainMenu.data,
       qt_meta_data_MainMenu,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
@@ -96,12 +96,12 @@ void *MainMenu::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_MainMenu.stringdata0))
         return static_cast<void*>(const_cast< MainMenu*>(this));
-    return QWidget::qt_metacast(_clname);
+    return QMainWindow::qt_metacast(_clname);
 }
 
 int MainMenu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

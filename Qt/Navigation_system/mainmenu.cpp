@@ -1,7 +1,7 @@
 #include "mainmenu.h"
 
 MainMenu::MainMenu(QWidget *parent) :
-    QWidget(parent)
+    QMainWindow(parent)
 {
     ui.setupUi(this);
 }
@@ -9,7 +9,27 @@ MainMenu::MainMenu(QWidget *parent) :
 MainMenu::MainMenu(int type,DataBase *nsdb)
 {
     ui.setupUi(this);
+    //label = new MyLabel(this);
     this->nsdb = nsdb;
+
+
+    QWidget *widget = new QWidget();
+    QPushButton *btn1 = new QPushButton();
+//    QPushButton *btn2 = new QPushButton();
+//    QPushButton *btn3 = new QPushButton();
+    /*****************DrawBackGround***********************/
+    QHBoxLayout* layout = new QHBoxLayout(widget);//水平布局
+    QVBoxLayout* layout2 = new QVBoxLayout(this);//水平布局
+//    layout2->addWidget(btn1);
+//    layout2->addWidget(btn2);
+//    layout->addWidget(btn3);
+//    layout->addLayout(layout2);
+    layout->addWidget(btn1);
+    layout->addLayout(ui.verticalLayout_3);
+    layout->setStretchFactor(btn1,5);
+    layout->setStretchFactor(label,5);
+    this->setCentralWidget(widget);
+    /******************************************************/
 
     /*************Get Vertex to add item****************/
     this->nsdb->getVertex(vadjlist);

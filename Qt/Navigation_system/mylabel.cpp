@@ -3,4 +3,5 @@
 MyLabel::MyLabel(QWidget *parent) : QLabel(parent)
 {
 
+    this->setText("23333");
 }
