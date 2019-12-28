@@ -10,6 +10,8 @@ class MyLabel : public QLabel
     Q_OBJECT
 public:
     explicit MyLabel(QWidget *parent = 0);
+    MyLabel(std::vector<Coordinate> &vcoordinate);
+
 //    void paintEvent(QPaintEvent *event)
 //    {
 //        QLabel::paintEvent(event);//先调用父类的paintEvent为了显示'背景'!!!

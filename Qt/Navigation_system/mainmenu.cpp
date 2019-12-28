@@ -9,26 +9,33 @@ MainMenu::MainMenu(QWidget *parent) :
 MainMenu::MainMenu(int type,DataBase *nsdb)
 {
     ui.setupUi(this);
-    //label = new MyLabel(this);
+    label = new MyLabel(vcoordinate);
+    label->setParent(this);
     this->nsdb = nsdb;
+    label->move(10,10);
+    label->resize(1040,820);
+    ui.btn_manage->move(1041,47);
 
 
-    QWidget *widget = new QWidget();
-    QPushButton *btn1 = new QPushButton();
-//    QPushButton *btn2 = new QPushButton();
-//    QPushButton *btn3 = new QPushButton();
-    /*****************DrawBackGround***********************/
-    QHBoxLayout* layout = new QHBoxLayout(widget);//水平布局
-    QVBoxLayout* layout2 = new QVBoxLayout(this);//水平布局
-//    layout2->addWidget(btn1);
-//    layout2->addWidget(btn2);
-//    layout->addWidget(btn3);
-//    layout->addLayout(layout2);
-    layout->addWidget(btn1);
-    layout->addLayout(ui.verticalLayout_3);
-    layout->setStretchFactor(btn1,5);
-    layout->setStretchFactor(label,5);
-    this->setCentralWidget(widget);
+//    QWidget *widget = new QWidget();
+////    QPushButton *btn1 = new QPushButton();
+////    QPushButton *btn2 = new QPushButton();
+////    QPushButton *btn3 = new QPushButton();
+//    /*****************DrawBackGround***********************/
+//      label->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
+//    QHBoxLayout* layout = new QHBoxLayout(this);//水平布局
+////    QVBoxLayout* layout2 = new QVBoxLayout(this);//水平布局
+////    layout2->addWidget(btn1);
+////    layout2->addWidget(btn2);
+////    layout->addWidget(btn3);
+////    layout->addLayout(layout2);
+
+//    layout->addLayout(ui.verticalLayout_3);
+//    layout->addWidget(label);
+
+//    layout->setStretchFactor(label,8);
+//    layout->setStretchFactor(ui.verticalLayout_3,2);
+//    this->setLayout(layout);
     /******************************************************/
 
     /*************Get Vertex to add item****************/
