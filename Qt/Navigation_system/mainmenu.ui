@@ -29,12 +29,15 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="9,1">
      <item>
-      <widget class="QLabel" name="lb_map">
+      <widget class="MyLabel" name="lb_map">
        <property name="styleSheet">
-        <string notr="true">\</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/平面图.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -230,6 +233,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">mylabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

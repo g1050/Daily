@@ -21,6 +21,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <mylabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,7 +30,7 @@ class Ui_MainMenu
 public:
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *lb_map;
+    MyLabel *lb_map;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_2;
     QLabel *label;
@@ -63,9 +64,10 @@ public:
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        lb_map = new QLabel(MainMenu);
+        lb_map = new MyLabel(MainMenu);
         lb_map->setObjectName(QStringLiteral("lb_map"));
-        lb_map->setStyleSheet(QStringLiteral("\\"));
+        lb_map->setStyleSheet(QStringLiteral(""));
+        lb_map->setPixmap(QPixmap(QString::fromUtf8("../build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/\345\271\263\351\235\242\345\233\276.png")));
         lb_map->setScaledContents(true);
 
         horizontalLayout_2->addWidget(lb_map);

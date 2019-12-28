@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     find.cpp \
     mainmenu.cpp \
     graph.cpp \
-    manager.cpp
+    manager.cpp \
+    mylabel.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -41,7 +42,8 @@ HEADERS  += mainwindow.h \
     find.h \
     mainmenu.h \
     graph.h \
-    manager.h
+    manager.h \
+    mylabel.h
 
 FORMS    += mainwindow.ui \
     register.ui \
