@@ -5,8 +5,9 @@
 #include "graph.h"
 #include "database.h"
 #include "manager.h"
+#include <QMainWindow>
 
-class MainMenu : public QWidget
+class MainMenu : public QMainWindow
 {
     Q_OBJECT
 private:
@@ -17,9 +18,11 @@ private:
     int type;
     DataBase *nsdb;
     Graph *graph;
-
+    QGraphicsScene *scene;
+    QGraphicsView *view;
+    void initScene();
 public:
-    explicit MainMenu(QWidget *parent = 0);
+    explicit MainMenu(QMainWindow *parent = 0);
     MainMenu(int type,DataBase *nsdb);
     void paintEvent(QPaintEvent *)
     {

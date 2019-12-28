@@ -1,7 +1,17 @@
 #include "mainmenu.h"
 
-MainMenu::MainMenu(QWidget *parent) :
-    QWidget(parent)
+void MainMenu::initScene()
+{
+    QGraphicsPixmapItem *item =
+            scene->addPixmap (QPixmap("/home/gxk/Daily/Qt"
+                                      "/build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/"
+                                      "平面图.png"));
+//    item->setFlag (QGraphicsItem::ItemIsMovable);
+    item->setPos (-500, -420);
+}
+
+MainMenu::MainMenu(QMainWindow *parent) :
+    QMainWindow(parent)
 {
     ui.setupUi(this);
 }
@@ -10,6 +20,17 @@ MainMenu::MainMenu(int type,DataBase *nsdb)
 {
     ui.setupUi(this);
     this->nsdb = nsdb;
+
+    /*******************Draw Background******************/
+    scene = new QGraphicsScene;
+    scene->setSceneRect (-100, -100, 700, 700);
+    initScene();
+    view = new QGraphicsView;
+    view->setScene (scene);
+    view->setMinimumSize (800, 800);
+    view->show ();
+    setCentralWidget(view);
+    /*******************************************/
 
     /*************Get Vertex to add item****************/
     this->nsdb->getVertex(vadjlist);

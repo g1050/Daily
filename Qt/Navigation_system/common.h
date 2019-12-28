@@ -18,6 +18,9 @@
 #include <cmath>
 #include <QMouseEvent>
 #include <QPainter>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsPixmapItem>
 
 const int MAXSIZE = 1024;
 const int MAXN = 0xffff;
