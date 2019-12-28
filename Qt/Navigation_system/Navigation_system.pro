@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     register.cpp \
     find.cpp \
     mainmenu.cpp \
-    graph.cpp
+    graph.cpp \
+    manager.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -39,12 +40,14 @@ HEADERS  += mainwindow.h \
     register.h \
     find.h \
     mainmenu.h \
-    graph.h
+    graph.h \
+    manager.h
 
 FORMS    += mainwindow.ui \
     register.ui \
     find.ui \
-    mainmenu.ui
+    mainmenu.ui \
+    manager.ui
 
 RESOURCES += \
     resource.qrc

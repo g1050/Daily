@@ -12,10 +12,10 @@ MainMenu::MainMenu(int type,DataBase *nsdb)
     graph = new Graph(nsdb);
     ui.setupUi(this);
     this->type = type;
-
-    if(this->type == 1){
-       buttonManager = new QPushButton(this);
+    if(this->type != 1){
+       ui.btn_manage->hide();
     }
+
 }
 
 /*当点击按钮时获得起点和终点*/
@@ -28,4 +28,12 @@ void MainMenu::on_btn_findpath_clicked()
 
     qDebug() << st << " " <<ed;
 
+}
+
+void MainMenu::on_btn_manage_clicked()
+{
+    manager = new Manager(nsdb);
+    //this->hide();
+    manager->show();
+    //this->show();
 }

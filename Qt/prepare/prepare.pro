@@ -29,8 +29,7 @@ SOURCES += main.cpp\
     gdialog.cpp
 
 HEADERS  += mainwindow.h \
-    mydialog.h \
-    gdialog.h
+    mydialog.h
 
 FORMS += \
     form.ui

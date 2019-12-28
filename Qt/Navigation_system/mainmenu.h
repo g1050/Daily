@@ -4,6 +4,8 @@
 #include "ui_mainmenu.h"
 #include "graph.h"
 #include "database.h"
+#include "manager.h"
+
 class MainMenu : public QWidget
 {
     Q_OBJECT
@@ -15,12 +17,14 @@ public:
 private slots:
     void on_btn_findpath_clicked();
 
+    void on_btn_manage_clicked();
+
 private:
     Ui::MainMenu ui;
+    Manager *manager;
     int type;
     DataBase *nsdb;
     Graph *graph;
-    QPushButton* buttonManager;
 };
 
 #endif // MAINMENU_H
