@@ -9,5 +9,6 @@ MyLabel::MyLabel(QWidget *parent) : QLabel(parent)
 MyLabel::MyLabel(std::vector<Coordinate> *p)
 {
     this->p = p;
-    this->setText("23333");
+
+    //this->setText("23333");
 }

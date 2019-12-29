@@ -23,26 +23,33 @@ private:
 public:
     explicit MainMenu(QWidget *parent = 0);
     MainMenu(int type,DataBase *nsdb);
-//    void paintEvent(QPaintEvent *)
-//    {
-//        //QPainter p(this);
-//        QPainter p;
+    void paintEvent(QPaintEvent *)
+    {
+        //QPainter p(this);
+        QPixmap mypix("/home/gxk/图片/xiyoulinux.png");
 
-//        QPen pen;
-//        pen.setWidth(5);
-//        pen.setColor(Qt::red);
-//        pen.setStyle(Qt::DashLine);
+        QPainter p;
 
-//        p.begin(this);
-//        p.setPen(pen);
+        QPen pen;
+        pen.setWidth(5);
+        pen.setColor(Qt::red);
+        pen.setStyle(Qt::SolidLine);
 
-//        int size = vcoordinate.size();
-//        qDebug() << "size = " <<size;
-//        if(size != 0){
-//            for(int i = 0;i<size-1;i++){
-//                p.drawLine(vcoordinate[i].x,vcoordinate[i].y,vcoordinate[i+1].x,vcoordinate[i+1].y);
-//            }
-//        }
+        p.begin(&mypix);
+        p.setPen(pen);
+
+        int size = vcoordinate.size();
+        qDebug() << "size = " <<size;
+        if(size != 0){
+            for(int i = 0;i<size-1;i++){
+                p.drawLine(vcoordinate[i].x,vcoordinate[i].y,vcoordinate[i+1].x,vcoordinate[i+1].y);
+            }
+        }
+
+        p.end();
+        //update();
+        ui.lb_map->setPixmap(mypix);
+    }
 
 
 

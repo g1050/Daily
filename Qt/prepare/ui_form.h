@@ -125,7 +125,7 @@ public:
 
         retranslateUi(Form);
 
-        asd->setCurrentIndex(2);
+        asd->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Form);
@@ -141,7 +141,7 @@ public:
         label->setText(QApplication::translate("Form", "Name", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("Form", "Search", Q_NULLPTR));
         asd->setTabText(asd->indexOf(widget), QApplication::translate("Form", "123", Q_NULLPTR));
-        asd->setTabText(asd->indexOf(tab), QApplication::translate("Form", "\351\241\265", Q_NULLPTR));
+        asd->setTabText(asd->indexOf(tab), QApplication::translate("Form", "789", Q_NULLPTR));
     } // retranslateUi
 
 };

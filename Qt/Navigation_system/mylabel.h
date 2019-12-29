@@ -19,6 +19,8 @@ public:
         //QPainter p(this);
         QPainter p;
 
+        QPixmap mypix("/home/gxk/图片/xiyoulinux.png");
+
         QPen pen;
         pen.setWidth(5);
         pen.setColor(Qt::red);

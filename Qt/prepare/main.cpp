@@ -5,8 +5,7 @@
 #include <QFont>
 #include <QDebug>
 #include "mydialog.h"
-#include "gdialog.h"
-
+#include "mainwindows.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -17,8 +16,10 @@ int main(int argc, char *argv[])
 //    qDebug() << "Run............";
 //    MainWindow w;
 //    w.show ();
-    GDialog dialog;
-    dialog.show();
+//    GDialog dialog;
+//    dialog.show();
+    MainWindows w;
+    w.show();
 
     return a.exec();
 }

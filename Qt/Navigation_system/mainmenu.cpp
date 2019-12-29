@@ -9,16 +9,20 @@ MainMenu::MainMenu(QWidget *parent) :
 MainMenu::MainMenu(int type,DataBase *nsdb)
 {
     ui.setupUi(this);
-    label = new MyLabel(&vcoordinate);
-    label->setParent(this);
+//    label = new MyLabel(&vcoordinate);
+//    label->setParent(this);
     this->nsdb = nsdb;
-    label->move(10,10);
-    label->resize(1040,820);
-    ui.btn_manage->move(1041,47);
-    ui.cb_ed->move(1041,67);
-    ui.cb_st->move(1047,107);
-    ui.btn_findpath->move(1041,127);
+//    label->move(10,10);
+//    label->resize(1040,820);
+//    ui.btn_manage->move(1041,47);
+//    ui.cb_ed->move(1041,67);
+//    ui.cb_st->move(1047,107);
+//    ui.btn_findpath->move(1041,127);
 
+//    QPixmap *pixmap = new QPixmap("/home/gxk/图片/xiyoulinux.png");
+//    pixmap->scaled(label->size(), Qt::KeepAspectRatio);
+//    label->setScaledContents(true);
+//    label->setPixmap(*pixmap);
 
 //    QWidget *widget = new QWidget();
 ////    QPushButton *btn1 = new QPushButton();
