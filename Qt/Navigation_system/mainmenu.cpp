@@ -1,7 +1,8 @@
 #include "mainmenu.h"
 
+
 MainMenu::MainMenu(QWidget *parent) :
-    QMainWindow(parent)
+    QWidget(parent)
 {
     ui.setupUi(this);
 }
@@ -9,41 +10,15 @@ MainMenu::MainMenu(QWidget *parent) :
 MainMenu::MainMenu(int type,DataBase *nsdb)
 {
     ui.setupUi(this);
-//    label = new MyLabel(&vcoordinate);
-//    label->setParent(this);
-    this->nsdb = nsdb;
-//    label->move(10,10);
-//    label->resize(1040,820);
-//    ui.btn_manage->move(1041,47);
-//    ui.cb_ed->move(1041,67);
-//    ui.cb_st->move(1047,107);
-//    ui.btn_findpath->move(1041,127);
+    mypix = new QPixmap();
+    mypix->load("/home/gxk/Daily/Qt/"
+                "build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/"
+                "平面图2.png");
+    ui.lb_map->setScaledContents(true);
+    ui.lb_map->setPixmap(*mypix);
 
-//    QPixmap *pixmap = new QPixmap("/home/gxk/图片/xiyoulinux.png");
-//    pixmap->scaled(label->size(), Qt::KeepAspectRatio);
-//    label->setScaledContents(true);
-//    label->setPixmap(*pixmap);
 
-//    QWidget *widget = new QWidget();
-////    QPushButton *btn1 = new QPushButton();
-////    QPushButton *btn2 = new QPushButton();
-////    QPushButton *btn3 = new QPushButton();
-//    /*****************DrawBackGround***********************/
-//      label->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred));
-//    QHBoxLayout* layout = new QHBoxLayout(this);//水平布局
-////    QVBoxLayout* layout2 = new QVBoxLayout(this);//水平布局
-////    layout2->addWidget(btn1);
-////    layout2->addWidget(btn2);
-////    layout->addWidget(btn3);
-////    layout->addLayout(layout2);
 
-//    layout->addLayout(ui.verticalLayout_3);
-//    layout->addWidget(label);
-
-//    layout->setStretchFactor(label,8);
-//    layout->setStretchFactor(ui.verticalLayout_3,2);
-//    this->setLayout(layout);
-    /******************************************************/
 
     /*************Get Vertex to add item****************/
     this->nsdb->getVertex(vadjlist);
@@ -74,17 +49,14 @@ void MainMenu::on_btn_findpath_clicked()
     int i = graph->local(st);
     int j = graph->local(ed);
 
-    //qDebug() << "i = " << i << "j = " << j ;
+
     //调用寻找各点到源点的最短距离
     graph->Dijkstra(i);
     //寻找最短路的路径
     graph->getPath(j,vcoordinate);
-    update();
 
+    loadPixture();
 
-
-
-    //qDebug() << st << " " <<ed;
 
 }
 
@@ -94,4 +66,52 @@ void MainMenu::on_btn_manage_clicked()
     //this->hide();
     manager->show();
     //this->show();
+}
+
+void MainMenu::loadPixture()
+{
+    /*****************DrawBackGround***********************/
+    mypix->load("/home/gxk/Daily/Qt/"
+                "build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/"
+                "平面图2.png");
+    QPainter painter;
+    painter.begin(mypix);
+
+    QPen pen;
+    pen.setWidth(5);
+    pen.setColor(Qt::red);
+    pen.setStyle(Qt::SolidLine);
+
+    painter.setPen(pen);
+
+
+    int size = vcoordinate.size();
+    qDebug() << "size = " <<size;
+    if(size != 0){
+       for(int i = 0;i<size-1;i++){
+            int x1 = vcoordinate[i].x-10,y1 = vcoordinate[i].y-10;
+            int x2 = vcoordinate[i+1].x-10,y2 = vcoordinate[i+1].y-10;
+            qDebug() << x1 << " " << y1 << x2 << " " << y2;
+            painter.drawLine(x1,y1,x2,y2);
+        }
+    }
+
+    painter.end();
+
+    ui.lb_map->setScaledContents(true);
+    ui.lb_map->setPixmap(*mypix);
+
+    update();
+}
+
+
+void MainMenu::on_btn_clear_clicked()
+{
+    mypix->load("/home/gxk/Daily/Qt/"
+                "build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/"
+                "平面图2.png");
+    ui.lb_map->setScaledContents(true);
+    ui.lb_map->setPixmap(*mypix);
+
+    update();
 }

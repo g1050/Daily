@@ -27,10 +27,11 @@ QT_BEGIN_NAMESPACE
 class Ui_MainMenu
 {
 public:
+    QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
     QLabel *lb_map;
     QVBoxLayout *verticalLayout_3;
-    QLabel *label_2;
+    QLabel *lb_hello;
     QLabel *label;
     QPushButton *btn_manage;
     QSpacerItem *horizontalSpacer;
@@ -55,19 +56,23 @@ public:
             MainMenu->setObjectName(QStringLiteral("MainMenu"));
         MainMenu->resize(1300, 863);
         MainMenu->setMinimumSize(QSize(1300, 863));
-        horizontalLayout = new QHBoxLayout(MainMenu);
+        MainMenu->setMaximumSize(QSize(1300, 863));
+        horizontalLayout_2 = new QHBoxLayout(MainMenu);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         lb_map = new QLabel(MainMenu);
         lb_map->setObjectName(QStringLiteral("lb_map"));
+        lb_map->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout->addWidget(lb_map);
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        label_2 = new QLabel(MainMenu);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        lb_hello = new QLabel(MainMenu);
+        lb_hello->setObjectName(QStringLiteral("lb_hello"));
 
-        verticalLayout_3->addWidget(label_2);
+        verticalLayout_3->addWidget(lb_hello);
 
         label = new QLabel(MainMenu);
         label->setObjectName(QStringLiteral("label"));
@@ -167,6 +172,9 @@ public:
         horizontalLayout->setStretch(0, 8);
         horizontalLayout->setStretch(1, 2);
 
+        horizontalLayout_2->addLayout(horizontalLayout);
+
+
         retranslateUi(MainMenu);
 
         QMetaObject::connectSlotsByName(MainMenu);
@@ -176,7 +184,7 @@ public:
     {
         MainMenu->setWindowTitle(QApplication::translate("MainMenu", "Form", Q_NULLPTR));
         lb_map->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
+        lb_hello->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
         label->setText(QApplication::translate("MainMenu", "TextLabel", Q_NULLPTR));
         btn_manage->setText(QApplication::translate("MainMenu", "\347\256\241\347\220\206\345\257\274\350\210\252\347\263\273\347\273\237", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainMenu", "\350\265\267\347\202\271", Q_NULLPTR));

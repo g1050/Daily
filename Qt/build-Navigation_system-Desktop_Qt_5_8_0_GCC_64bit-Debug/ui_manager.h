@@ -464,7 +464,7 @@ public:
         tab_3->setObjectName(QStringLiteral("tab_3"));
         label_3 = new QLabel(tab_3);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 10, 1045, 820));
+        label_3->setGeometry(QRect(1, 1, 1019, 843));
         label_3->setPixmap(QPixmap(QString::fromUtf8("../build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/\345\271\263\351\235\242\345\233\276.png")));
         label_3->setScaledContents(true);
         lb_mouse2 = new QLabel(tab_3);
