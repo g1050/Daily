@@ -9,12 +9,15 @@ MainMenu::MainMenu(QWidget *parent) :
 MainMenu::MainMenu(int type,DataBase *nsdb)
 {
     ui.setupUi(this);
-    label = new MyLabel(vcoordinate);
+    label = new MyLabel(&vcoordinate);
     label->setParent(this);
     this->nsdb = nsdb;
     label->move(10,10);
     label->resize(1040,820);
     ui.btn_manage->move(1041,47);
+    ui.cb_ed->move(1041,67);
+    ui.cb_st->move(1047,107);
+    ui.btn_findpath->move(1041,127);
 
 
 //    QWidget *widget = new QWidget();
@@ -60,6 +63,7 @@ MainMenu::MainMenu(int type,DataBase *nsdb)
 /*当点击按钮时获得起点和终点*/
 void MainMenu::on_btn_findpath_clicked()
 {
+    vcoordinate.clear();
     QString st = ui.cb_st->currentText();
     QString ed = ui.cb_ed->currentText();
 
