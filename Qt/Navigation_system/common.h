@@ -17,6 +17,7 @@
 #include <queue>
 #include <cmath>
 #include <QMouseEvent>
+#include <QCloseEvent>
 #include <QPainter>
 
 const int MAXSIZE = 1024;

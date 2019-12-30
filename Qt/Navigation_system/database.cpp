@@ -147,7 +147,7 @@ bool DataBase::getVertex(std::vector<AdjList> &vadjlist)
         adjlist.name = query.value("NAME").toString();
         adjlist.x = query.value("COORDINATEX").toInt();
         adjlist.y = query.value("COORDINATEY").toInt();
-        if(adjlist.name != "")
+        if(query.value("DESCRIPTION").toString() != "")
             vadjlist.push_back(adjlist);
         //qDebug() << adjlist.name << adjlist.x << adjlist.y;
     }

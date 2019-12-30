@@ -4,7 +4,9 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
+
     ui.setupUi(this);
+    this->setWindowTitle("sky西邮导航系统");
     nsdb = new DataBase();
     account = new Account(nsdb);
 
@@ -29,7 +31,7 @@ void MainWindow::on_login_clicked()
 //    qDebug() << username ;
 //    qDebug() << passwd   ;
     if(account->verify(username,passwd)){
-        this->mainmenu = new MainMenu(account->getType(username),nsdb);
+        this->mainmenu = new MainMenu(username,account->getType(username),nsdb);
         this->close();
         mainmenu->show();
         //qDebug() << "Yes" ;

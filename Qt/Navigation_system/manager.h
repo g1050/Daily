@@ -5,6 +5,7 @@
 #include <QSqlRecord>
 #include "ui_manager.h"
 #include "database.h"
+#include <QMainWindow>
 
 class Manager : public QWidget
 {
@@ -13,6 +14,12 @@ class Manager : public QWidget
 public:
     explicit Manager(QWidget *parent = 0);
     Manager(DataBase *nsdb);
+    ~Manager();
+    void closeEvent(QCloseEvent *event)
+    {
+        //|窗口关闭之前需要的操作~
+        emit returnParentUI();
+    }
     void mousePressEvent(QMouseEvent *event)
     {
        QString msg=QString("鼠标位置:%1,%2").arg(event->pos().x()).arg(event->pos().y());
@@ -26,7 +33,8 @@ public:
       //qDebug() << msg ;
       update();
     }
-
+signals:
+    void returnParentUI();
 private:
     DataBase *nsdb;
 private slots:

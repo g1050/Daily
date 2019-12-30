@@ -15,6 +15,7 @@ Find::Find(DataBase *nsdb)
 {
     ui.setupUi(this);
     this->nsdb = nsdb;
+    this->setWindowTitle("找回密码");
 }
 
 void Find::on_pushButton_clicked()

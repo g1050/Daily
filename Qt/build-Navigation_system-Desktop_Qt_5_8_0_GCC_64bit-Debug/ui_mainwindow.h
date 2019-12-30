@@ -35,7 +35,6 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLabel *label_2;
     QHBoxLayout *horizontalLayout_3;
-    QSpacerItem *horizontalSpacer_3;
     QLabel *label;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -49,13 +48,15 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *login;
     QSpacerItem *horizontalSpacer_2;
-    QSpacerItem *verticalSpacer;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(577, 406);
+        MainWindow->setMinimumSize(QSize(507, 406));
+        MainWindow->setMaximumSize(QSize(577, 406));
+        MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(235, 242, 249);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout_4 = new QVBoxLayout(centralWidget);
@@ -70,18 +71,19 @@ public:
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QStringLiteral("background-image: url(:/build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/background.jpg);"));
+        label_2->setScaledContents(false);
 
         verticalLayout_2->addWidget(label_2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer_3);
-
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
+        label->setStyleSheet(QStringLiteral(""));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/build-Navigation_system-Desktop_Qt_5_8_0_GCC_64bit-Debug/small.jpg")));
+        label->setScaledContents(true);
 
         horizontalLayout_3->addWidget(label);
 
@@ -145,8 +147,8 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_4);
 
-        horizontalLayout_3->setStretch(1, 3);
-        horizontalLayout_3->setStretch(2, 7);
+        horizontalLayout_3->setStretch(0, 3);
+        horizontalLayout_3->setStretch(1, 7);
 
         verticalLayout_2->addLayout(horizontalLayout_3);
 
@@ -167,6 +169,7 @@ public:
         sizePolicy1.setHeightForWidth(login->sizePolicy().hasHeightForWidth());
         login->setSizePolicy(sizePolicy1);
         login->setMaximumSize(QSize(16777215, 16777215));
+        login->setStyleSheet(QStringLiteral("background-color: rgb(60, 195, 245);"));
 
         horizontalLayout_4->addWidget(login);
 
@@ -185,10 +188,6 @@ public:
 
         verticalLayout_4->addLayout(verticalLayout_3);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_4->addItem(verticalSpacer);
-
         verticalLayout_4->setStretch(0, 1);
         MainWindow->setCentralWidget(centralWidget);
 
@@ -200,8 +199,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
+        label_2->setText(QString());
+        label->setText(QString());
         link_reg->setText(QApplication::translate("MainWindow", "\346\263\250\345\206\214\350\264\246\345\217\267", Q_NULLPTR));
         link_find->setText(QApplication::translate("MainWindow", "\346\211\276\345\233\236\345\257\206\347\240\201", Q_NULLPTR));
         login->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225", Q_NULLPTR));

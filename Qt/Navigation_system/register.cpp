@@ -18,7 +18,9 @@ Register::Register(QWidget *parent) :
 
 Register::Register(DataBase *nsdb)
 {
+
     ui.setupUi(this);
+    this->setWindowTitle("注册账号");
     this->nsdb = nsdb;
     /***********LineEdit****************/
     ui.ln_usr->setClearButtonEnabled(true);

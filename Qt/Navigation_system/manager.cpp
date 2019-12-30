@@ -9,7 +9,7 @@ Manager::Manager(QWidget *parent) :
 Manager::Manager(DataBase *nsdb)
 {
     ui.setupUi(this);
-
+    this->setWindowTitle("sky西邮导航系统");
     this->nsdb = nsdb;
 
     //Init QSqlTableModel
@@ -57,8 +57,15 @@ Manager::Manager(DataBase *nsdb)
 
 }
 
+Manager::~Manager()
+{
+    qDebug() << "Manager deestroy" ;
+    emit returnParentUI();
+}
+
 void Manager::on_btn_submit_clicked()
 {
+    //emit returnParentUI();
     model->submitAll();
 }
 

@@ -680,7 +680,9 @@ compiler_rcc_make_all: qrc_resource.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../Navigation_system/resource.qrc \
-		../../../tools/qt/5.8/gcc_64/bin/rcc
+		../../../tools/qt/5.8/gcc_64/bin/rcc \
+		background.jpg \
+		small.jpg
 	/home/gxk/tools/qt/5.8/gcc_64/bin/rcc -name resource ../Navigation_system/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -880,6 +882,7 @@ moc_mainwindow.cpp: ui_mainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -902,6 +905,7 @@ moc_mainwindow.cpp: ui_mainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTableView \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h \
+		../Navigation_system/mylabel.h \
 		../Navigation_system/mainwindow.h \
 		moc_predefs.h \
 		../../../tools/qt/5.8/gcc_64/bin/moc
@@ -1091,6 +1095,7 @@ moc_register.cpp: ui_register.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -1284,6 +1289,7 @@ moc_find.cpp: ui_find.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -1475,6 +1481,7 @@ moc_mainmenu.cpp: ui_mainmenu.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
@@ -1491,6 +1498,9 @@ moc_mainmenu.cpp: ui_mainmenu.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTableView \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
+		../Navigation_system/mylabel.h \
 		../Navigation_system/mainmenu.h \
 		moc_predefs.h \
 		../../../tools/qt/5.8/gcc_64/bin/moc
@@ -1687,8 +1697,11 @@ moc_manager.cpp: ../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlTableModel \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
 		../Navigation_system/manager.h \
 		moc_predefs.h \
 		../../../tools/qt/5.8/gcc_64/bin/moc
@@ -1798,6 +1811,45 @@ moc_mylabel.cpp: ../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QLabel \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		../Navigation_system/common.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QString \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QDebug \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QMovie \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qmovie.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qimagereader.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qimageiohandler.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QTextCodec \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlDatabase \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlQuery \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QTime \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlError \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QtDebug \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlDriver \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlRecord \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpen.h \
 		../Navigation_system/mylabel.h \
 		moc_predefs.h \
 		../../../tools/qt/5.8/gcc_64/bin/moc
@@ -1821,112 +1873,7 @@ ui_find.h: ../Navigation_system/find.ui \
 	/home/gxk/tools/qt/5.8/gcc_64/bin/uic ../Navigation_system/find.ui -o ui_find.h
 
 ui_mainmenu.h: ../Navigation_system/mainmenu.ui \
-		../../../tools/qt/5.8/gcc_64/bin/uic \
-		../Navigation_system/mylabel.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QWidget \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qwidget.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qtguiglobal.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qglobal.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qconfig.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qtcore-config.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qsystemdetection.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qprocessordetection.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qtypeinfo.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qsysinfo.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qlogging.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qflags.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qtypetraits.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qatomic.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qbasicatomic.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qgenericatomic.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qglobalstatic.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qmutex.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qnumeric.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qversiontagging.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qtgui-config.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qnamespace.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qobject.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qstring.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qchar.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qbytearray.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qrefcount.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qarraydata.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qstringbuilder.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qlist.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qalgorithms.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qiterator.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qhashfunctions.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qpair.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qbytearraylist.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qstringlist.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qregexp.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qstringmatcher.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qcoreevent.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qmetatype.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qobject_impl.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qmargins.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpaintdevice.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qrect.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qsize.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qpoint.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpalette.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qcolor.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qrgb.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qrgba64.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qbrush.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qvector.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qmatrix.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpolygon.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qregion.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qdatastream.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qiodevice.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qline.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qtransform.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainterpath.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qimage.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpixelformat.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpixmap.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qshareddata.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qhash.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qfont.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qfontinfo.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qcursor.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qkeysequence.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qevent.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qvariant.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qmap.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qdebug.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qtextstream.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qlocale.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qset.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qurl.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qurlquery.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qfile.h \
-		../../../tools/qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qvector2d.h \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QLabel \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qframe.h
+		../../../tools/qt/5.8/gcc_64/bin/uic
 	/home/gxk/tools/qt/5.8/gcc_64/bin/uic ../Navigation_system/mainmenu.ui -o ui_mainmenu.h
 
 ui_manager.h: ../Navigation_system/manager.ui \
@@ -2132,6 +2079,7 @@ main.o: ../Navigation_system/main.cpp ../Navigation_system/mainwindow.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -2153,7 +2101,8 @@ main.o: ../Navigation_system/main.cpp ../Navigation_system/mainwindow.h \
 		ui_manager.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTableView \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h \
+		../Navigation_system/mylabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Navigation_system/main.cpp
 
 mainwindow.o: ../Navigation_system/mainwindow.cpp ../Navigation_system/mainwindow.h \
@@ -2345,6 +2294,7 @@ mainwindow.o: ../Navigation_system/mainwindow.cpp ../Navigation_system/mainwindo
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -2366,7 +2316,8 @@ mainwindow.o: ../Navigation_system/mainwindow.cpp ../Navigation_system/mainwindo
 		ui_manager.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTableView \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h \
+		../Navigation_system/mylabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Navigation_system/mainwindow.cpp
 
 account.o: ../Navigation_system/account.cpp ../Navigation_system/account.h \
@@ -2504,6 +2455,7 @@ account.o: ../Navigation_system/account.cpp ../Navigation_system/account.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
@@ -2646,6 +2598,7 @@ database.o: ../Navigation_system/database.cpp ../Navigation_system/database.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
@@ -2837,6 +2790,7 @@ register.o: ../Navigation_system/register.cpp ../Navigation_system/register.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -3028,6 +2982,7 @@ find.o: ../Navigation_system/find.cpp ../Navigation_system/find.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../Navigation_system/account.h \
@@ -3217,6 +3172,7 @@ mainmenu.o: ../Navigation_system/mainmenu.cpp ../Navigation_system/mainmenu.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
@@ -3232,7 +3188,10 @@ mainmenu.o: ../Navigation_system/mainmenu.cpp ../Navigation_system/mainmenu.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextformat.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTabWidget \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QTableView \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qtableview.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h \
+		../Navigation_system/mylabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainmenu.o ../Navigation_system/mainmenu.cpp
 
 graph.o: ../Navigation_system/graph.cpp ../Navigation_system/graph.h \
@@ -3371,6 +3330,7 @@ graph.o: ../Navigation_system/graph.cpp ../Navigation_system/graph.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
@@ -3569,8 +3529,11 @@ manager.o: ../Navigation_system/manager.cpp ../Navigation_system/manager.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
-		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o manager.o ../Navigation_system/manager.cpp
 
 mylabel.o: ../Navigation_system/mylabel.cpp ../Navigation_system/mylabel.h \
@@ -3677,7 +3640,46 @@ mylabel.o: ../Navigation_system/mylabel.cpp ../Navigation_system/mylabel.h \
 		../../../tools/qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QLabel \
 		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
-		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qframe.h
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qframe.h \
+		../Navigation_system/common.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QString \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QDebug \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QMovie \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qmovie.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qimagereader.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qeventloop.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qimageiohandler.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qplugin.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qpointer.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qjsonobject.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qfactoryinterface.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QTextCodec \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qtextcodec.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlDatabase \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlQuery \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqlquery.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QTime \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/qdatetime.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlError \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqlerror.h \
+		../../../tools/qt/5.8/gcc_64/include/QtCore/QtDebug \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlDriver \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqldriver.h \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/QSqlRecord \
+		../../../tools/qt/5.8/gcc_64/include/QtSql/qsqlrecord.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/QMessageBox \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../tools/qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QMouseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QCloseEvent \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/QPainter \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpainter.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qtextoption.h \
+		../../../tools/qt/5.8/gcc_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mylabel.o ../Navigation_system/mylabel.cpp
 
 qrc_resource.o: qrc_resource.cpp 
