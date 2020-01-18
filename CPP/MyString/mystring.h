@@ -3,12 +3,14 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <string>
 
 class MyString
 {
     friend std::ostream &operator<< (std::ostream &out,MyString &s);
+    friend std::istream &operator>> (std::istream &in,MyString &s);
 public:
-    MyString();
+    MyString(int len = 0);
     MyString(const char *p);
     MyString(const MyString &s);
     ~MyString();
@@ -25,6 +27,14 @@ public:
     bool operator <(const char *ptmp) const;
     bool operator >(const MyString &s) const;
     bool operator <(const MyString &s) const ;
+
+public:
+    char *getPointer(){
+        return this->p;
+    }
+
+
+
 private:
     int len;
     char *p;

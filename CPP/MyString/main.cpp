@@ -61,6 +61,17 @@ int main(int argc, char *argv[])
        std::cout << "s5 is smaller than s6" << std::endl;
     }
 
+    std::cout << s6 << std::endl;
+    strcpy(s6.getPointer(),"Hello world");
+    std::cout << s6 << std::endl;
+
+    MyString s7(100);
+
+    std::cin >> s7;
+    std::cout << s7 << std::endl;
+
+
+
 //    QCoreApplication a(argc, argv);
 
 //    return a.exec();

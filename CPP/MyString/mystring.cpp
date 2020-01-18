@@ -1,10 +1,22 @@
 #include "mystring.h"
 
-MyString::MyString()
+std::istream &operator>>(std::istream &in, MyString &s)
 {
-    this->len = 0;
-    this->p = new char[this->len + 1];
-    strcpy(this->p,"");
+    in >> s.p;
+    return in;
+}
+
+MyString::MyString(int len)
+{
+    if(len == 0){
+        this->len = 0;
+        this->p = new char[this->len + 1];
+        strcpy(this->p,"");
+    }else{
+        this->len = len;
+        this->p = new char[this->len + 1];
+        memset(this->p,0,this->len + 1);
+    }
 }
 
 MyString::MyString(const char *p)
@@ -83,17 +95,17 @@ char &MyString::operator[](int index)
 
 bool MyString::operator ==(const char *ptmp) const
 {
-   if(ptmp == NULL ){
-      if(this->len == 0) return true;
-      else return false;
-   }
-   else{
-       if(!strcmp(this->p,ptmp)) {
+    if(ptmp == NULL ){
+        if(this->len == 0) return true;
+        else return false;
+    }
+    else{
+        if(!strcmp(this->p,ptmp)) {
             return true;
-       }else{
+        }else{
             return false;
-       }
-   }
+        }
+    }
 }
 
 bool MyString::operator ==(const MyString &s) const
@@ -137,6 +149,6 @@ bool MyString::operator <(const MyString &s) const
 
 std::ostream& operator<<(std::ostream &out, MyString &s)
 {
-   out << s.p;
-   return out;
+    out << s.p;
+    return out;
 }
