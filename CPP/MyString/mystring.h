@@ -10,9 +10,12 @@ class MyString
     friend std::ostream &operator<< (std::ostream &out,MyString &s);
     friend std::istream &operator>> (std::istream &in,MyString &s);
 public:
+    /*************constructor***************/
     MyString(int len = 0);
+    MyString(int len,char c);
     MyString(const char *p);
     MyString(const MyString &s);
+    MyString(const MyString& str, size_t pos, size_t len = 0);
     ~MyString();
 
 public:

@@ -8,7 +8,10 @@ int main(int argc, char *argv[])
     MyString s3 = s2;
     MyString s4;
     s4 = s2;
-
+    MyString s8(10,'a');
+    MyString s9("Hello",2,3);
+    std::cout << s9 << std::endl;
+    std::cout << "s8 = " << s8 << std::endl;
     std::cout << s4 << std::endl;
     std::cout << s4[1] << std::endl;
 

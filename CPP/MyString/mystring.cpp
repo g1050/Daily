@@ -19,6 +19,13 @@ MyString::MyString(int len)
     }
 }
 
+MyString::MyString(int len, char c)
+{
+   this->len = len + 1;
+   this->p = new char[this->len + 1];
+   memset(this->p,c,len);
+}
+
 MyString::MyString(const char *p)
 {
     if(p == NULL){
@@ -40,6 +47,15 @@ MyString::MyString(const MyString &s)
     this->p = new char[this->len + 1];
     strcpy(this->p,s.p);
     return ;
+}
+
+MyString::MyString(const MyString &str, size_t pos, size_t len)
+{
+    this->len = len + 1;
+    this->p = new char[this->len];
+    const char *p = str.getPointer();
+    //strncpy(this->p,str.getPointer()[pos],len);
+
 }
 
 MyString::~MyString()
