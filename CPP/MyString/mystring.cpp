@@ -81,8 +81,8 @@ MyString::MyString(const char *p, size_t n)
 
 MyString::MyString(const char *p, size_t pos, size_t len)
 {
-    this->len = len + 1;
-    this->p = new char[this->len];
+    this->len = len;
+    this->p = new char[this->len + 1];
     strncpy(this->p,&p[pos],len);
 
 }
@@ -131,6 +131,43 @@ void MyString::resize(size_t n)
     strncpy(this->p,tmp,n);
 
     delete[] tmp;
+}
+
+void MyString::clear()
+{
+   if(this->p != NULL) {
+       delete []p;
+       this->p = NULL;
+   }
+   this->len = 0;
+   return ;
+}
+
+bool MyString::empty() const
+{
+   if(!strcmp(this->p,"") && this->len == 0)
+       return true;
+   else return false;
+}
+
+char &MyString::at(size_t pos)
+{
+    return this->p[pos];
+}
+
+const char &MyString::at(size_t pos) const
+{
+    return this->p[pos];
+}
+
+char &MyString::back()
+{
+   if(!this->empty()) {
+       return this->p[this->len-1];
+   }else{
+       std::cout << "func back error" << std::endl;
+       exit(1);
+   }
 }
 
 MyString &MyString::operator=(const char *p)

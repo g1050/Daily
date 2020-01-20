@@ -13,11 +13,21 @@ int main(int argc, char *argv[])
     MyString s9("Hello",3);
     MyString s10("Hello",2,3);
     MyString s7(100);
+    MyString s11 = "";
+    s10.back() = 'l';
+
+    for(int i = 0;i<s10.size();i++){
+        std::cout << s10.at(i);
+    }
+    std::cout << std::endl;
+
+    if(s11.empty()){
+        std::cout << "empty" << std::endl;
+    }
     s7 = 'c';
     s7 = "Hello C";
     s7.resize(s7.size()+2,'+');
     s7.resize(5);
-    std::cout << s7 << std::endl;
     strcpy(s7.getPointer(),"Hello world");
     s4[1] = '3';
     if(s4 == s2){

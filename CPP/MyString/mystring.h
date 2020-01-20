@@ -23,6 +23,11 @@ public:
 public:
     void resize(size_t n,char ch);
     void resize(size_t n);
+    void clear();
+    bool empty() const;
+    char &at(size_t pos);
+    const char &at(size_t pos) const;
+    char &back();//The function should not be called by empty string.
 
 public:
     MyString& operator= (const char*p);
